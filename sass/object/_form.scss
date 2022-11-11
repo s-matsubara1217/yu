@@ -1,0 +1,459 @@
+// Foundation
+@use '../foundation/mixins' as *;
+
+/*------------------------------
+form base setting
+------------------------------*/
+body.iPhone select,
+body.iPhone input,
+body.iPhone textarea {
+	font-size: 16px !important;
+}
+
+body{
+
+	input,
+	button,
+	textarea,
+	select {
+		-moz-appearance: none;
+		-ms-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+		text-indent: 0.01px;
+		line-height: inherit;
+		text-overflow: '';
+	}
+
+	input::-ms-expand,
+	button::-ms-expand,
+	textarea::-ms-expand,
+	select::-ms-expand {
+		display: none;
+	}
+
+	input::-ms-reveal,
+	button::-ms-reveal,
+	textarea::-ms-reveal,
+	select::-ms-reveal {
+		visibility: hidden;
+	}
+
+	input::-ms-clear,
+	button::-ms-clear,
+	textarea::-ms-clear,
+	select::-ms-clear {
+		visibility: hidden;
+	}
+
+	input[type="text"],
+	input[type="submit"],
+	input[type="search"],
+	input[type="button"],
+	select,
+	textarea {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		border: none;
+		outline: none;
+		transition: all 0.2s;
+	}
+
+	input[type="search"] {
+		cursor: auto;
+		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
+		-webkit-appearance: textfield;
+		-webkit-appearance: none;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
+	input[type="search"]:focus {
+		outline-offset: -2px;
+	}
+
+	input[type="search"]::-webkit-search-decoration {
+		display: none;
+	}
+
+	select,
+	search,
+	input {
+		width: 100%;
+		display: block;
+		overflow: hidden;
+		padding: 12px 15px !important;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		cursor: pointer;
+		background: #f4f4f4;
+		@include mq(pc) {
+			&:hover{
+				background: darken(#f4f4f4,2%);
+			}
+		}
+		@include mq(sp) {
+			padding: 8px 15px !important;
+		}
+	}
+
+	select,
+	input[type="text"],
+	input[type="search"]{
+		@include mq(sp) {
+			font-size: 1.6rem;
+		}
+	}
+
+	select{
+		padding-right: 64px !important;
+	}
+
+	input[type="text"],
+	input[type="search"],
+	input[type="submit"] {
+		padding: 12px 15px !important;
+		background: #f4f4f4;
+		@include mq(pc) {
+			&:hover{
+				background: darken(#f4f4f4,2%);
+			}
+		}
+		@include mq(sp) {
+			padding: 8px 16px !important;
+		}
+	}
+
+	input[type=checkbox] {
+		display: none;
+	}
+
+	input[type=checkbox] + label {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		position: relative;
+		cursor: pointer;
+		line-height: 1.5;
+		padding-left: 20px;
+		transition: all 0.2s;
+		@include mq(sp) {
+			padding-left: 20px;
+		}
+	}
+
+	input[type=checkbox] + label:before, input[type=checkbox] + label:after {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		content: "";
+		position: absolute;
+		transition: all 0.2s;
+	}
+
+	input[type=checkbox] + label:before {
+		background: #fff;
+		width: 14px;
+		height: 14px;
+		left: 0;
+		top: 4px;
+		z-index: 0;
+		// border-radius: 2px;
+		@include mq(sp) {
+			width: 14px;
+			height: 14px;
+		}
+	}
+
+	input[type=checkbox] + label::after {
+		top: 4px;
+		left: 4px;
+		z-index: 2;
+		opacity: 0;
+		width: 4px;
+		height: 8px;
+		color: #ffffff;
+		border-bottom: 2px solid;
+		border-right: 2px solid;
+		-webkit-transform: rotate(-180deg);
+		transform: rotate(-180deg);
+		box-sizing: content-box;
+	}
+
+	input[type=checkbox] + label a:link,
+	input[type=checkbox] + label a:visited {
+		color: #333;
+	}
+
+	input[type=checkbox]:checked + label:before {
+		background: $primary-color;
+		border-color: transparent;
+	}
+
+	input[type=checkbox]:checked + label:after {
+		-webkit-transform: rotate(40deg);
+		transform: rotate(40deg);
+		opacity: 1;
+	}
+
+	input[type=radio] {
+		display: none;
+	}
+
+	input[type=radio] + label {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		cursor: pointer;
+		display: block;
+		line-height: 1.5;
+		padding: 0 15px 0 1.5em;
+		position: relative;
+		transition: all 0.2s;
+	}
+
+	input[type=radio] + label:before, input[type=radio] + label:after {
+		-moz-transition: all 0.2s;
+		-ms-transition: all 0.2s;
+		-webkit-transition: all 0.2s;
+		content: "";
+		position: absolute;
+		transition: all 0.2s;
+	}
+
+	input[type=radio] + label:before {
+		background: #f2f2f2;
+		border: 1px solid #f2f2f2;
+		border-radius: 50%;
+		height: 13px;
+		left: 0;
+		top: 3px;
+		width: 13px;
+		z-index: 0;
+	}
+
+	input[type=radio] + label:after {
+		background: $primary-color;
+		border-radius: 50%;
+		height: 7px;
+		left: 3px;
+		opacity: 0;
+		top: 6px;
+		width: 7px;
+		z-index: 2;
+	}
+
+	input[type=radio] + label a:link,
+	input[type=radio] + label a:visited {
+		color: $txt-color;
+	}
+
+	input[type=radio]:checked + label:after {
+		opacity: 1;
+	}
+
+}
+
+
+/*------------------------------
+	form custom setting
+------------------------------*/
+.custom-form{
+	font-weight: 500;
+	&__parts{
+		display: flex;
+		align-items: flex-start;
+		font-size: 1.4rem;
+		margin-top: 30px !important;
+		@include mq(sp){
+			display: block;
+			margin-top: 20px !important;
+		}
+		&:first-of-type{
+			margin-top: 0 !important;
+		}
+		.form_parts_inner{
+			flex: 1 1 100%;
+			&.-submit{
+				@include mq(pc) {
+					display: flex;
+					justify-content: space-between;
+					input[type="search"]{
+						height: 100%;
+					}
+					.freeword{
+						flex: 1 1 auto;
+					}
+					.submitBtn{
+						flex: 0 0 120px;
+						margin-left: 10px;
+					}
+				}
+				@include mq(sp) {
+					.submitBtn{
+						width: 80%;
+						margin: 16px auto 0;
+						&:before{
+							left: 20px;
+						}
+						input{
+							padding: 14px 16px !important;
+						}
+					}
+				}
+			}
+		}
+	}
+	&__ttl{
+		flex: 0 0 140px;
+		max-width: 140px;
+		font-size: 1.5rem;
+		font-weight: bold;
+		padding: 7px 0 !important;
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 11px;
+			height: 11px;
+			background-color: $primary-color;
+			border-radius: 50%;
+			margin-right: 10px;
+			margin-bottom: 1px;
+		}
+
+		@include mq(sp){
+			font-size: 1.4rem;
+			padding: 0 !important;
+		}
+	}
+	.pulldown,
+	.freeword{
+		position: relative;
+		border-radius: 5px;
+		overflow: hidden;
+	}
+	.pulldown{
+		margin-bottom: 10px;
+		&:after{
+			content: '';
+			width: 7px;
+			height: 7px;
+			position: absolute;
+			right: 19px;
+			top: calc(50% - 2px);
+			z-index: 1;
+			color: $secondary-color;
+			border-bottom: 2px solid;
+			border-right: 2px solid;
+			transform: translateY(-50%) rotate(45deg);
+			pointer-events: none;
+		}
+	}
+  .check_box{
+		padding: 12px 15px;
+		background: #f4f4f4;
+    & > ul{
+      display: flex;
+      flex-wrap: wrap;
+			li{
+				margin: 4px 1em;
+				margin-left: 0;
+			}
+    }
+  }
+	&__submit{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		align-items: center;
+		margin-top: 30px !important;
+		@media all and (-ms-high-contrast: none) {
+			justify-content: flex-start;
+		}
+		@media screen and (max-width: 1280px){
+			display: block;
+			text-align: center;
+		}
+		@include mq(sp){
+			margin-top: 30px !important;
+		}
+	}
+	.submitTxt{
+		position: relative;
+		font-size: 1.8rem;
+		font-weight: bold;
+		line-height: 1.66;
+		margin-right: 20px;
+		padding-right: 40px;
+		@media screen and (max-width: 1280px){
+			margin-right: 0;
+			padding-right: 0;
+			margin-bottom: 20px;
+		}
+		@include mq(sp){
+			display: none;
+		}
+		&::after{
+			content: '▶▶';
+			position: absolute;
+			top: 50%;
+			right: 0;
+			font-size: 1.2rem;
+			font-weight: bold;
+			color: $primary-color;
+			transform: translate(0,-50%);
+			@media screen and (max-width: 1280px){
+				display: none;
+			}
+		}
+		span{
+			display: inline-block;
+			padding: 12px 5px;
+			background: url(../img/common/wave.png) left bottom /auto 5px repeat-x;
+		}
+	}
+	.submitBtn{
+		position: relative;
+    width: 234px;
+		border-radius: 5px;
+		margin: 0 auto;
+		@include mq(sp){
+			width: 200px;
+		}
+		&:before{
+			content: '';
+			position: absolute;
+			left: 64px;
+			top: 50%;
+			width: 19px;
+			height: 19px;
+			background: url(../img/common/ico_search.png) center center /contain no-repeat;
+			transform: translate(0,-50%);
+			@include mq(sp){
+				width: 15px;
+				height: 15px;
+				left: 52px;
+			}
+		}
+		input{
+			font-size: 1.6rem;
+			color: #ffffff;
+			padding: 14px 16px 14px 32px !important;
+			background: $secondary-color;
+			box-sizing: border-box;
+			transition: background 0.4s;
+			border-radius: 5px;
+			@include mq(sp) {
+				font-size: 1.6rem !important;
+				padding: 12px 16px 12px 32px !important;
+			}
+			@include mq(pc) {
+				&:hover{
+					background: darken($secondary-color,7%);
+				}
+			}
+		}
+	}
+}

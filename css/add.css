@@ -1,0 +1,89 @@
+/* notfound - 共通 */
+.notfound {
+  text-align: center;
+}
+.notfound p {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.notfound_p_tb {
+  padding: 6em 0;
+}
+.notfound_p_t {
+  padding: 6em 0 0;
+}
+.notfound_p_b {
+  padding: 0 0 6em;
+}
+@media only screen and (max-width: 768px) {
+  .notfound p {
+    font-size: 1.4rem;
+  }
+  .notfound_p_tb {
+    padding: 3em 0;
+  }
+}
+.lower-interview_d .sec__profile .profile__top .txt-holder .name-holder .top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.lower-interview_d .sec__profile .profile__top .txt-holder .name-holder .top .jobs {
+  flex-shrink: 0;
+}
+@media only screen and (max-width: 768px) {
+  .lower-interview_l .pageHeader .img-holder .img img {
+    object-position: 15%;
+  }
+}
+.lower-factory .sec__flow {
+  z-index: 2;
+}
+.lower-factory .sec__flow .flow__list__item .txt-holder {
+  margin-top: 68px;
+}
+@media only screen and (min-width: 1200px) {
+  .lower-factory .sec__flow .flow__list__item .txt-holder {
+    margin-top: 88px;
+  }
+}
+.lower-factory .sec__flow .flow__list__item .img-holder {
+  margin-bottom: -48px;
+}
+@media only screen and (min-width: 1200px) {
+  .lower-factory .sec__flow .flow__list__item .img-holder {
+    margin-bottom: -68px;
+  }
+}
+@media only screen and (min-width: 835px) {
+  .lower-factory .point__head.-isListItemEven {
+    margin-right: 0;
+    margin-left: 15%;
+    margin-top: 72px;
+    align-items: flex-start;
+  }
+}
+@media only screen and (min-width: 835px) {
+  .lower-factory .flow .deco-holder.-isListItemEven .deco.circle.-orange02 {
+    right: auto;
+    left: 3%;
+    bottom: -8%;
+  }
+  .lower-factory .flow .deco-holder.-isListItemEven .deco.circle.-blue {
+    right: auto;
+    left: 38%;
+    bottom: -2%;
+  }
+  .lower-factory .flow .deco-holder.-isListItemEven .deco.dot.-red {
+    right: auto;
+    left: 8%;
+    bottom: -2%;
+  }
+  .lower-factory .flow .deco-holder.-isListItemEven .deco.dot.-purple {
+    right: auto;
+    left: 44%;
+    bottom: -7%;
+  }
+}
+.lower-factory .sec__point {
+  z-index: 2;
+}

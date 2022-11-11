@@ -1,0 +1,212 @@
+// Foundation
+@use '../foundation/mixins' as *;
+// @include mq(sp)
+// @media screen and (max-width: 1200px)
+
+
+/* ============================================
+// フォーム 追加スタイル
+// ==========================================*/
+.custom-form {
+  position: relative;
+
+  .custom-form_parts {
+    margin-top: 24px;
+    @include mq(sp) {
+      margin-top: 20px;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .ttl {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .icon {
+        display: flex;
+        margin-right: 10px;
+      }
+      .parts_ttl {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+    }
+    .form_parts_inner {
+      margin-top: 8px;
+    }
+
+    .pull-down {
+      position: relative;
+      margin-bottom: 10px;
+
+      // ▼
+      &:after{
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7px 5px 0 5px;
+        border-color: #292f36 transparent transparent transparent;
+        position: absolute;
+        right: 32px;
+        top: 50%;
+        z-index: 1;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+
+      select {
+        background-color: #fff;
+        border: 1px solid $txt-color;
+        border-radius: 100px;
+        padding: 12px 28px !important;
+        padding-right: 44px !important;
+        @include mq(sp) {
+          padding: 10px 24px !important;
+          padding-right: 48px !important;
+        }
+      }
+    }
+    .category_list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: -4px;
+
+      li {
+        font-size: 1.6rem;
+        @include mq(sp) {
+          font-size: 1.4rem;
+        }
+
+        label {
+          display: block;
+          margin: 4px;
+          background-color: #fae1e1;
+          border-radius: 100px;
+          padding: 11px 24px 15px 42px;
+          @include mq(sp) {
+            padding: 10px 19px 12px 36px;
+          }
+
+          &:before {
+            width: 18px;
+            height: 18px;
+            border-radius: 2px;
+            top: 15px;
+            left: 16px;
+            background-color: #fff;
+            @include mq(sp) {
+              width: 16px;
+              height: 16px;
+              top: 14px;
+              left: 14px;
+            }
+          }
+          &:after {
+            width: 5px;
+            height: 10px;
+            top: 16px;
+            left: 21px;
+            color: $primary-color;
+            @include mq(sp) {
+              width: 4px;
+              height: 8px;
+              left: 19px;
+            }
+          }
+        }
+
+        input[type=checkbox]:checked + label{
+          background: $primary-color;
+          color: #fff;
+        }
+      }
+    }
+    input[type=search] {
+      background-color: #e6e4df;
+      padding: 12px 28px !important;
+      border-radius: 100px;
+      @include mq(sp) {
+        padding: 10px 24px !important;
+      }
+
+      &::placeholder {
+        color: rgba(#262626,50%);
+      }
+    }
+
+    &.-freeword {
+      .form_parts_inner {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        @include mq(sp) {
+          display: block;
+        }
+
+        .searchWord {
+          display: block;
+          flex: 1 1 auto;
+          margin-right: 10px;
+        }
+        .custom-form_searth_btn {
+          @include mq(sp) {
+            margin-top: 24px;
+          }
+          .btn_cover {
+            width: 170px;
+            height: 56px;
+            display: block;
+            position: relative;
+            transition: background 0.3s;
+            background: $primary-color;
+            border-radius: 5px;
+            transform: skewX(-8deg);
+            @include mq(sp) {
+              margin: 0 auto;
+            }
+
+            @include mq(pc) {
+              &:hover {
+                background-color: lighten($primary-color,5%);
+              }
+            }
+
+            &::before {
+              content: '';
+              display: inline-block;
+              background-image: url(../img/common/ico_search_white.png);
+              background-size: contain;
+              background-repeat: repeat;
+              width: 15px;
+              height: 15px;
+              position: absolute;
+              top: 50%;
+              left: calc(50% - 32px);
+              transform: translate(-50%,-50%) skewX(8deg);
+              @include mq(sp) {
+                left: calc(50% - 32px);
+              }
+            }
+
+            input[type=submit] {
+              display: block;
+              width: 100%;
+              height: 100%;
+              color: #fff;
+              background-color: transparent;
+              font-size: 1.6rem;
+              font-weight: bold;
+              padding-left: 24px !important;
+              transform: skewX(8deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}

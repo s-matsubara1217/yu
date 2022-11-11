@@ -1,0 +1,139 @@
+/* notfound - 共通 */
+.notfound{
+    text-align: center;
+	p{
+		font-size: 1.6rem;
+		font-weight: bold;
+	}
+}
+.notfound_p_tb{
+	padding: 6em 0;
+}
+.notfound_p_t{
+	padding: 6em 0 0;
+}
+.notfound_p_b{
+	padding: 0 0 6em;
+}
+
+@media only screen and (max-width: 768px){
+	.notfound{
+		p{
+			font-size: 1.4rem;
+		}
+	}
+    .notfound_p_tb{
+		padding: 3em 0;
+	}
+}
+
+// 220912 matsubara interview_d 職種スタイル調整
+.lower-interview_d {
+	.sec__profile {
+		.profile__top {
+			.txt-holder {
+				.name-holder {
+					.top {
+						justify-content: flex-start;
+						align-items: flex-start;
+						.jobs {
+							flex-shrink: 0;
+
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// 220912 matsubara interview_l pageheader画像トリミング調整
+.lower-interview_l {
+	.pageHeader {
+		.img-holder {
+			.img {
+				img {
+					@media only screen and (max-width: 768px){
+						object-position: 15%;
+					}
+				}
+			}
+		}
+	}
+}
+
+// 220912 matsubara factory z-index調整
+.lower-factory {
+	.sec__flow {
+		z-index: 2;
+	}
+}
+
+// 220921 matsubara factory 修正
+.lower-factory {
+	.sec__flow {
+		.flow__list__item {
+			.txt-holder {
+				margin-top: 68px;
+				@media only screen and (min-width: 1200px){
+					margin-top: 88px;
+				}
+			}
+			.img-holder {
+				margin-bottom: -48px;
+				@media only screen and (min-width: 1200px){
+					margin-bottom: -68px;
+				}
+			}
+		}
+	}
+
+	.point__head {
+		&.-isListItemEven {
+			@media only screen and (min-width: 835px){
+				margin-right: 0;
+				margin-left: 15%;
+				margin-top: 72px;
+				align-items: flex-start;
+			}
+		}
+	}
+	.flow {
+		.deco-holder {
+			&.-isListItemEven {
+				@media only screen and (min-width: 835px){
+					.deco {
+						&.circle {
+							&.-orange02 {
+								right: auto;
+								left: 3%;
+								bottom: -8%;
+							}
+							&.-blue {
+								right: auto;
+								left: 38%;
+								bottom: -2%;
+							}
+						}
+						&.dot {
+							&.-red {
+								right: auto;
+								left: 8%;
+								bottom: -2%;
+							}
+							&.-purple {
+								right: auto;
+								left: 44%;
+								bottom: -7%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.sec__point {
+		z-index: 2;
+	}
+}

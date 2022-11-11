@@ -1,0 +1,18 @@
+// Foundation
+@use '../foundation/mixins' as *;
+// @include mq(sp)
+// @media screen and (max-width: 1200px)
+
+/* ============================================
+// HOVER
+// ==========================================*/
+@include mq(pc) {
+
+  .h-opacity {
+    transition: opacity 0.3s;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+}
