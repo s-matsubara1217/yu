@@ -28,24 +28,3 @@ $(function(){
       $('.panel').not('.is-show').hide();
     });
 });
-
-
-/*-------------------------------
-	順序入れ替え
--------------------------------*/
-function switchByWidth() {
-  if (window.matchMedia('(max-width: 834px)').matches) {
-    $('.sec__intro .lead').after($('.sec__intro .img-holder'));
-    $('.sec__newJobs .newJobs__body').after($('.sec__newJobs .commonLink01'));
-  } else if (window.matchMedia('(min-width:835px)').matches) {
-    $('.sec__intro .txt-holder').before($('.sec__intro .img-holder'));
-    $('.sec__newJobs .commonHead01').after($('.sec__newJobs .commonLink01'));
-  }
-}
-
-window.addEventListener('DOMContentLoaded', function () {
-  switchByWidth();
-});
-window.addEventListener('resize', function () {
-  switchByWidth();
-});
