@@ -7,7 +7,6 @@
 // FOOTER
 // ==========================================*/
 .footer{
-
 }
 
 
@@ -16,37 +15,7 @@
 // ==========================================*/
 .pagetop {
   position: fixed;
-  right: 32px;
-  bottom: 32px;
+  right: 0;
+  bottom: 0;
   z-index: 100;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.6s, transform 0.6s;
-  @include mq(sp) {
-    right: 12px;
-    bottom: 12px;
-  }
-
-  a {
-    display: block;
-    transition: transform 0.3s;
-    @include mq(pc) {
-      &:hover {
-        transform: translateY(-8px);
-      }
-    }
-    img {
-      @include mq(sp) {
-        height: 76px;
-      }
-    }
-  }
-}
-.js-loaded {
-  &.js-scroll {
-    .pagetop {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
