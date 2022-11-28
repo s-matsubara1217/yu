@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+// ========================================
+
+// variable
+
+// ========================================
+// color set
+$primary-color: #26addf;
+$secondary-color: #ff00a3;
+$third-color: #022983;
+$fourth-color: #3db0e8;
+$accent-color: $third-color;
+$txt-color:#222;
+
+$bg-beige-color: #f2f2f2;
+
+$bg-color: #e9f7fc;
+$bg-primary-right-color: #cceaeb;
+$border-color: #e7e7e7;
+
+
+// Noto Sans JP - font-family: 'Noto Sans JP', sans-serif;
+// Medium 500  Bold 700
+$notosans: 'Noto Sans JP', sans-serif;
+
+// font-family: 'PT Sans', sans-serif;
+// Regular 400  Bold 700   italic
+$ptsans: 'PT Sans', sans-serif;
+
+// Montserrat - font-family: 'Montserrat', sans-serif;
+// Regular 400  Bold 700  Black 900
+$montserrat: 'Montserrat', sans-serif;
+
+// Lato - font-family: 'Lato', sans-serif;
+// Regular 400/i  Bold 700/i
+$lato: 'Lato', sans-serif;
+
+// Crimson Text - font-family: 'Crimson Text', serif;
+// Regular 400/i  SemiBold 600/i
+$crimson: 'Crimson Text', serif;
+
+
+// Open Sans Text - font-family: 'Open Sans', sans-serif;
+// Light 300/i  Regular 400/i   Bold 700/i
+$opensans: 'Open Sans', sans-serif;

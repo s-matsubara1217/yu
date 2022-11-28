@@ -1,0 +1,71 @@
+@charset "utf-8";
+@use "../global" as *;
+
+/* ============================================
+// block width
+// ==========================================*/
+.l-blockWidth {
+  &-xs {
+    max-width: 200px;
+    width: 100%;
+  }
+  &-s {
+    max-width: 260px;
+    width: 100%;
+  }
+  &-m {
+    max-width: 300px;
+    width: 100%;
+  }
+  &-l {
+    max-width: 700px;
+    width: 100%;
+  }
+  &-xl {
+    max-width: 800px;
+    width: 100%;
+  }
+}
+
+
+/* ============================================
+// container base (liquid)
+// ==========================================*/
+$layout-padding: 70px;
+
+%layout-base {
+  position: relative;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $layout-padding;
+  padding-right: $layout-padding;
+  @include mq(sp) {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+
+.l-container {
+  &-s {
+    @extend %layout-base;
+    max-width: 940px + $layout-padding*2;
+  }
+  &-m {
+    @extend %layout-base;
+    // max-width: 1024px + $layout-padding*2;
+    max-width: 1100px + $layout-padding*2;
+  }
+  &-l {
+    @extend %layout-base;
+    max-width: 1200px + $layout-padding*2;
+  }
+  &-xl {
+    @extend %layout-base;
+    max-width: 1400px + $layout-padding*2;
+  }
+  &-xxl {
+    @extend %layout-base;
+    max-width: 1600px + $layout-padding*2;
+  }
+}

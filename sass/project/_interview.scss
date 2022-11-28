@@ -1,0 +1,1212 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+
+// .lower-interview_l ,
+// .lower-interview_d {
+// 	#loading {
+// 		display: none;
+// 	}
+// }
+
+
+/* ============================================
+// interview 共通
+// ==========================================*/
+.p-interview {
+	margin-bottom: 150px;
+	@include mq(sp) {
+		margin-bottom: 100px;
+	}
+}
+
+
+/* ============================================
+// interview_l
+// ==========================================*/
+.lower-interview_l {
+
+	// list
+	.staffList {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		padding-left: 70px;
+		padding-right: 70px;
+		@include mq(pc) {
+			padding-top: 100px;
+			margin-bottom: 100px;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				// width: 100%;
+				width: 5000px;
+				height: 56%;
+				background: $third-color;
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 0;
+				top: 0;
+				left: 0;
+				background: url(../img/texture-line1.png) no-repeat center top / contain;
+				width: 315px;
+				height: 292px;
+				pointer-events: none;
+				opacity: 0.3;
+				@include mq(sp) {
+					width: 40%;
+					// width: 315px *0.6;
+					// height: 292px *0.6;
+				}
+			}
+			&:nth-child(even) {
+				&::after {
+					transform: scale(-1 , 1);
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+		@media (max-width: 1300px) and (min-width: 835px) {
+			padding-left: 3%;
+			padding-right: 3%;
+		}
+		@include mq(sp) {
+			padding-left: 7%;
+			padding-right: 7%;
+		}
+		&_inner {
+			max-width: 1450px;
+			max-width: 1240px;
+			width: 100%;
+			@include mq(pc) {
+				display: flex;
+				justify-content: center;
+				// margin-left: -3%;
+				// margin-right: -3%;
+			}
+		}
+		&_item {
+			width: 100%;
+			position: relative;
+			@include mq(pc) {
+				flex: 0 1 50%;
+				max-width: 640px;
+				margin-left: 3%;
+				margin-right: 3%;
+			}
+			@include mq(sp) {
+				margin-bottom: 10vw;
+				padding-top: 10vw;
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 50%;
+					transform: translateX(-50%);
+					// width: 100%;
+					width: 5000px;
+					height: 56%;
+					background: $third-color;
+				}
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 0;
+					background: url(../img/texture-line1.png) no-repeat center top / contain;
+					height: 292px;
+					pointer-events: none;
+					opacity: 0.3;
+					width: 40%;
+					left: -7%;
+				}
+				&:nth-child(even) {
+					&::after {
+						transform: scale(-1 , 1);
+						left: auto;
+						right: -7%;
+					}
+				}
+			}
+			a {
+				position: relative;
+				@include mq(pc) {
+					display: flex;
+					flex-direction: column;
+					height: 100%;
+				}
+				@include mq(sp) {
+					display: block;
+					padding-left: 7%;
+					padding-right: 7%;
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						z-index: 0;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						border: 1px solid lighten($third-color , 20%);
+						border-top: none;
+						border-bottom: none;
+					}
+				}
+				@include mq(hover) {
+					&:hover {
+						opacity: 1;
+						.staffList_item_block2 {
+							.img {
+								img {
+									transform: scale(1.05);
+								}
+							}
+						}
+						.linkIco {
+							background-color: $third-color;
+						}
+					}
+				}
+			}
+			&_block1 {
+				position: relative;
+				z-index: 3;
+				width: 100%;
+				margin-bottom: 40px;
+				@include mq(pc) {
+					display: flex;
+				}
+				@media (max-width: 1300px) {
+					margin-bottom: 25px;
+				}
+				.num {
+					flex-shrink: 0;
+					font-size: 3rem;
+					font-weight: bold;
+					font-family: $crimson;
+					color: $third-color;
+					background-color: #fff;
+					width: 80px;
+					height: 80px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					margin-right: 30px;
+					@media (max-width: 1300px) and (min-width: 835px) {
+						width: 60px;
+						height: 60px;
+						font-size: 2.2rem;
+					}
+					@include mq(sp) {
+						flex-shrink: 0;
+						font-size: 1.8rem;
+						width: 40px;
+						height: 40px;
+						margin-left: auto;
+						margin-right: auto;
+						margin-bottom: 20px;
+					}
+				}
+				.catch {
+					display: flex;
+					align-items: center;
+					color: #fff;
+					font-size: 2.2rem;
+					font-weight: bold;
+					@include family(serif1);
+					line-height: 1.8;
+					@include mq(sp) {
+						font-size: 1.8rem;
+						line-height: 1.6;
+						br {
+							display: none;
+						}
+					}
+				}
+			}
+
+			&_block2 {
+				position: relative;
+				z-index: 3;
+				width: 100%;
+				margin-bottom: 40px;
+				margin-top: auto;
+				@include mq(sp) {
+					flex: auto;
+					margin-bottom: 25px;
+					width: 124%;
+					margin-left: -12%;
+					margin-right: -12%;
+				}
+				.img {
+					position: relative;
+					box-shadow: 0 25px 25px -10px rgba(0,0,0,0.15);
+					overflow: hidden;
+					backface-visibility: hidden;
+					&::before {
+						content: "";
+						display: block;
+						padding-top: calc((425/640)*100%);
+					}
+					// &::after {
+					// 	content: "";
+					// 	display: block;
+					// 	position: absolute;
+					// 	z-index: 1;
+					// 	bottom: -15px;
+					// 	left: 50%;
+					// 	transform: translateX(-50%);
+					// 	width: 100%;
+					// 	height: 100%;
+					// 	background-color: rgba(0,0,0,0.15);
+					// 	filter: blur(15px);
+					// 	pointer-events: none;
+					// }
+					img {
+						position: absolute;
+						z-index: 5;
+						top: 0;
+						left: 0;
+
+						transition: transform 0.3s;
+					}
+				}
+			}
+
+			&_block3 {
+				position: relative;
+				z-index: 3;
+				@include mq(sp) {
+					flex-basis: 100%;
+				}
+				.detail {
+					position: relative;
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					&_block1 {}
+					&_block2 { margin-top: 10px; }
+					&_block3 {}
+				}
+				.division {
+					display: flex;
+					align-items: center;
+					color: $txt-color;
+					.img {
+						// display: flex;
+						// align-items: center;
+						background-color: #fff;
+						margin-right: 20px;
+						padding: 6px;
+						img {
+							max-width: inherit;
+							width: auto;
+							height: 24px;
+						}
+					}
+					.text {
+						// display: flex;
+						// align-items: center;
+						font-weight: bold;
+						@include mq(sp) {
+							font-size: 1.3rem;
+						}
+					}
+				}
+				.job {
+					color: $txt-color;
+					font-weight: bold;
+					@include mq(sp) {
+						font-size: 1.2rem;
+					}
+				}
+				.name {
+					color: $txt-color;
+					font-size: 2.4rem;
+					font-weight: bold;
+					margin-right: 10px;
+					@include mq(sp) {
+						font-size: 1.8rem;
+					}
+				}
+				.join {
+					color: $txt-color;
+				}
+				.name {
+					font-size: 2.4rem;
+					font-weight: bold;
+					@include mq(sp) {
+						font-size: 1.8rem;
+					}
+				}
+				.linkIco {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					width: 36px;
+					height: 36px;
+					background-color: #fff;
+
+					transition: 0.3s;
+					.ico {
+						position: relative;
+						width: 13px;
+						height: 1px;
+						background-color: #222;
+						@include mq(sp) {
+							width: 10px;
+						}
+						&::before {
+							content: "";
+							display: block;
+							position: absolute;
+							top: -2px;
+							right: -1px;
+							width: 0;
+							height: 0;
+							border-style: solid;
+							border-width: 2.5px 0 2.5px 4px;
+							border-color: transparent transparent transparent $txt-color;
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+
+/* ============================================
+// interview_d
+// ==========================================*/
+.lower-interview_d {
+
+	&.js-loaded {
+		.interview_main {
+
+		}
+	}
+
+	// main
+	.interview_main {
+		position: relative;
+		padding-top: 10vw;
+		// padding-left: 7%;
+		// padding-right: 7%;
+		@media (max-width: 1300px) {
+			padding-top: 15vw;
+		}
+		@include mq(sp) {
+			padding-top: 85px;
+		}
+		&_ttl {
+			margin-bottom: 60px;
+			@include mq(sp) {
+				margin-bottom: 25px;
+				padding-left: 7%;
+				padding-right: 7%;
+			}
+			.catch {
+				font-size: 3.2rem;
+				font-weight: bold;
+				@include family(serif1);
+				line-height: 1.8;
+				@include mq(pc) {
+					text-align: center;
+				}
+				@include mq(sp) {
+					font-size: 2.2rem;
+				}
+				br {
+					@include mq(sp) {
+						display: none;
+					}
+				}
+			}
+		}
+		&_img {
+			position: relative;
+			z-index: 5;
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			// margin-bottom: 20px;
+			@include mq(sp) {
+				max-width: 86%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.img {
+				max-width: 640px;
+				width: 100%;
+				position: relative;
+				box-shadow: 0 40px 30px -20px rgba(0,0,0,0.15);
+				&::before {
+					content: "";
+					display: block;
+					padding-top: calc((425/640)*100%);
+				}
+				// &::after {
+				// 	content: "";
+				// 	display: block;
+				// 	position: absolute;
+				// 	z-index: 1;
+				// 	bottom: -15px;
+				// 	left: 50%;
+				// 	transform: translateX(-50%);
+				// 	width: 100%;
+				// 	height: 100%;
+				// 	background-color: rgba(0,0,0,0.3);
+				// 	filter: blur(30px);
+				// 	pointer-events: none;
+
+				// 	transition: 0.3s;
+				// }
+				img {
+					position: absolute;
+					z-index: 5;
+					top: 0;
+					left: 0;
+
+					transition: transform .5s .2s;
+				}
+			}
+		}
+
+		&_detail {
+			position: relative;
+			padding: 40px 7%;
+			@include mq(pc) {
+				min-height: 230px;
+			}
+			@include mq(sp) {
+				padding-top: 35px;
+				padding-bottom: 35px;
+			}
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 0;
+				top: -150px;
+				left: 0;
+				width: 100%;
+				height: calc(100% + 150px);
+				background-color: $third-color;
+				@include mq(sp) {
+					top: -50px;
+					height: calc(100% + 50px);
+				}
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 0;
+				top: -150px;
+				left: 0;
+				background: url(../img/texture-line1.png) no-repeat center top / contain;
+				width: 315px;
+				height: 292px;
+				pointer-events: none;
+				opacity: 0.3;
+				@include mq(sp) {
+					width: 40%;
+					// width: 315px *0.6;
+					// height: 292px *0.6;
+				}
+			}
+			.detail {
+				position: relative;
+				display: flex;
+				flex-direction: column;
+				max-width: 640px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				&_block1 {
+					position: relative;
+					z-index: 5;
+				}
+				&_block2 {
+					position: relative;
+					z-index: 5;
+					 margin-top: 10px; }
+				&_block3 {
+					position: relative;
+					z-index: 5;
+				}
+			}
+			.division {
+				display: flex;
+				align-items: center;
+				color: #fff;
+				.img {
+					// display: flex;
+					// align-items: center;
+					background-color: #fff;
+					margin-right: 20px;
+					padding: 6px;
+					img {
+						max-width: inherit;
+						width: auto;
+						height: 24px;
+					}
+				}
+				.text {
+					// display: flex;
+					// align-items: center;
+					font-weight: bold;
+					@include mq(sp) {
+						font-size: 1.3rem;
+					}
+				}
+			}
+			.job {
+				color: #fff;
+				font-weight: bold;
+				@include mq(sp) {
+					font-size: 1.2rem;
+				}
+			}
+			.name {
+				color: $txt-color;
+				font-size: 2.4rem;
+				font-weight: bold;
+				margin-right: 10px;
+				@include mq(sp) {
+					font-size: 1.8rem;
+				}
+			}
+			.join {
+				color: #fff;
+			}
+			.name {
+				font-size: 2.4rem;
+				font-weight: bold;
+				color: #fff;
+				@include mq(sp) {
+					font-size: 1.8rem;
+				}
+			}
+		}
+		&_textImg {
+			position: absolute;
+			z-index: 10;
+			top: -125px;
+			right: -240px;
+			max-width: 384px;
+			width: 100%;
+			@include mq(sp) {
+				z-index: 0;
+				top: auto;
+				bottom: 0;
+				right: -7%;
+				max-width: 55%;
+			}
+			.textImg {
+				position: relative;
+				display: inline-block;
+				max-width: 384px;
+				width: 100%;
+				.img {
+					display: block;
+					&:nth-child(1) {
+						width: calc((230/384)*100%);
+					}
+					&:nth-child(2) {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						width: calc((51/384)*100%);
+						margin: 0 33% -5% 0;
+					}
+					&:nth-child(3) {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						width: calc((165/384)*100%);
+						margin: 0 0 -12% 0;
+					}
+				}
+				img {
+					max-width: inherit;
+					width: 100%;
+				}
+			}
+		}
+
+		&_profile {
+			position: relative;
+			padding: 70px 7% 150px;
+			background: url(../img/bg-texture1.png) repeat 0 0;
+			@include mq(pc) {
+				display: flex;
+				justify-content: center;
+			}
+			@include mq(sp) {
+				padding-top: 30px;
+				padding-bottom: 70px;
+			}
+			.profile {
+				max-width: 1000px;
+				width: 100%;
+				@include mq(pc) {
+					display: flex;
+				}
+				.ttl {
+					position: relative;
+					z-index: 1;
+					font-size: 3rem;
+					font-weight: bold;
+					@include family(serif1);
+					flex-shrink: 0;
+					margin-right: 5%;
+					@include mq(sp) {
+						font-size: 2.2rem;
+					}
+				}
+				.text {
+					position: relative;
+					z-index: 1;
+				}
+			}
+			.enText {
+				position: absolute;
+				z-index: 0;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 30rem;
+				font-family: $crimson;
+				letter-spacing: normal;
+				line-height: 1;
+				color: #fff;
+				@include mq(sp) {
+					font-size: 36vw;
+					bottom: -0.2em;
+				}
+			}
+		}
+
+		.l-mv {
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+
+			&_circle {
+				&.-circle1 {
+					@include mq(sp) {
+						top: 61px;
+						left: 2vw;
+						transform: rotate(5deg);
+					}
+				}
+				&.-circle2 {
+					@include mq(sp) {
+						top: 30px;
+						right: 5vw;
+					}
+				}
+			}
+
+			&_illust {
+				&.-illust1 {
+					@include mq(sp) {
+						left: 59%;
+					}
+				}
+				&.-illust2 {
+					@include mq(sp) {
+						top: 15%;
+					}
+				}
+				&.-illust3 {
+					@include mq(sp) {
+						top: 16%;
+						bottom: auto;
+					}
+				}
+			}
+
+		}
+
+	}
+
+	// topics
+	.interview_topics {
+		margin-top: 50px;
+		@include mq(sp) {
+			margin-top: 30px;
+		}
+		&_ttl {
+			margin-bottom: 50px;
+			@include mq(sp) {
+				margin-bottom: 30px;
+			}
+		}
+		&_list {}
+		.topicstList {
+			&_item {
+				position: relative;
+				padding-top: 50px;
+				padding-bottom: 70px;
+				@include mq(sp) {
+					padding-top: 25px;
+					padding-bottom: 25px;
+				}
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+					max-width: 1000px;
+					width: 90%;
+					height: 100%;
+					background: url(../img/bg-texture2.png) repeat 0 0;
+					@include mq(sp) {
+						width: 84%;
+					}
+				}
+				&:not(:first-child) {
+					margin-top: 70px;
+					@include mq(sp) {
+						margin-top: 40px;
+					}
+				}
+				&:nth-of-type(even) {
+					.topicstList_item {
+						&_inner {
+							@include mq(pc) {
+								flex-direction: row-reverse;
+							}
+						}
+						&_num {
+							@include mq(pc) {
+								left: auto;
+								right: 15%;
+							}
+						}
+						&_img {
+							@include mq(pc) {
+								padding-left: 50px;
+								padding-right: 0;
+							}
+							span {
+								@include mq(pc) {
+									margin-left: 40%;
+								}
+							}
+						}
+					}
+				}
+				&_inner {
+					position: relative;
+					@include mq(pc) {
+						display: flex;
+						flex-wrap: wrap;
+					}
+				}
+				&_num {
+					position: absolute;
+					z-index: 5;
+					top: -75px;
+					left: 15%;
+					@include mq(sp) {
+						top: -36px;
+						left: calc(50% - 1em);
+
+					}
+				}
+				.num {
+					font-weight: bold;
+					font-size: 4.8rem;
+					font-weight: bold;
+					font-family: $crimson;
+					line-height: 1;
+					@include mq(sp) {
+						font-size: 2.4rem;
+					}
+				}
+				&_copy {
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					margin-bottom: 30px;
+					@include mq(sp) {
+						margin-bottom: 20px;
+					}
+				}
+				.copy {
+					font-size: 2.8rem;
+					font-weight: bold;
+					@include family(serif1);
+					@include mq(sp) {
+						font-size: 1.8rem;
+					}
+				}
+				&_text {
+					position: relative;
+					z-index: 3;
+					display: flex;
+					align-items: center;
+					flex: 1 1 55%;
+					width: 100%;
+					.text {
+						position: relative;
+						z-index: 1;
+						width: 100%;
+					}
+				}
+				&_img {
+					position: relative;
+					width: 100%;
+					@include mq(pc) {
+						flex: 0 1 45%;
+						max-width: 480px +  50px;
+						padding-right: 50px;
+					}
+					@include mq(sp) {
+						margin-bottom: 20px;
+					}
+					.img {
+						position: relative;
+						&:before {
+							content: "";
+							display: block;
+							padding-top: calc((320/480)*100%);
+						}
+					}
+					img {
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+				}
+			}
+		}
+	}
+
+	// schedule
+	.interview_schedule {
+		margin-top: 120px;
+		@include mq(sp) {
+			margin-top: 70px;
+		}
+		&_ttl {
+			position: relative;
+			z-index: 5;
+			max-width: 670px;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			.heading01 {
+				position: relative;
+				background-color: $fourth-color;
+				color: #fff;
+				padding-top: 60px;
+				padding-bottom: 60px;
+				overflow: hidden;
+				@include mq(sp) {
+					padding-top: 30px;
+					padding-bottom: 30px;
+				}
+				&::before {
+					content: "";
+					position: absolute;
+					z-index: 0;
+					top: 0;
+					left: 0;
+					background: url(../img/texture-line1.png) no-repeat center top / contain;
+					width: 315px;
+					height: 292px;
+					pointer-events: none;
+					opacity: 0.3;
+					@include mq(sp) {
+						width: 40%;
+					}
+				}
+				.en {
+					margin-bottom: 0;
+					&:first-letter {
+						color: #fff;
+					}
+				}
+			}
+			.img {
+				position: absolute;
+				bottom: -20px;
+				right: 20px;
+				@include mq(sp) {
+					max-width: 65px;
+					bottom: -20px;
+					right: 10px;
+				}
+			}
+			.circle {
+				position: absolute;
+				z-index: 0;
+				top: -60px;
+				&.-circle1 {
+					left: -320px;
+					@include mq(sp) {
+						max-width: 50%;
+						left: -6%;
+						top: auto;
+						bottom: -14%;
+					}
+				}
+				&.-circle2 {
+					right: -240px;
+					@include mq(sp) {
+						max-width: 30%;
+						top: -12%;
+						right: -5%;
+						transform: scale(1,-1) rotate(-5deg);
+					}
+				}
+				.img {}
+			}
+		}
+		&_list {
+			&_hd {
+				position: relative;
+				display: flex;
+				justify-content: center;
+				font-size: 1.8rem;
+				font-weight: bold;
+				max-width: 1000px;
+				width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+				padding: 40px 7% 20px;
+				@include mq(sp) {
+					font-size: 1.6rem;
+					padding-bottom: 10px;
+				}
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					z-index: 0;
+					top: -70px;
+					width: 100%;
+					height: calc(100% + 70px);
+					background: url(../img/bg-texture2.png) repeat 0 0;
+				}
+				span {
+					position: relative;
+					z-index: 3;
+				}
+			}
+		}
+		.scheduleList {
+			position: relative;
+			max-width: 1000px;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				z-index: 3;
+				bottom: -10px;
+				right: -10px;
+				background: url(../img/illust-washokun4.png) no-repeat 0 0 / contain;
+				width: 62px;
+				height: 73px;
+				@include mq(sp) {
+					width: 62px *0.7;
+					height: 73px *0.7;
+				}
+			}
+			&_item {
+				position: relative;
+				overflow: hidden;
+				@include mq(pc) {
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+				&:nth-child(odd) {
+					background: url(../img/bg-texture2.png) repeat 0 0;
+				}
+				&:first-child {
+					.scheduleList_item {
+						&_inner {
+							&::before {
+								top: 50px;
+								height: calc(100% - 50px);
+								@include mq(sp) {
+									top: 30px;
+									height: calc(100% - 30px);
+								}
+							}
+						}
+						// &_block1 {
+						// 	&::before {
+						// 		top: 50px;
+						// 		height: calc(100% - 50px);
+						// 	}
+						// }
+					}
+				}
+				&:last-child {
+					border-bottom: 2px solid #fefcfb;
+					.scheduleList_item {
+						&_inner {
+							&::before {
+								height: 50px;
+								@include mq(sp) {
+									height: 35px;
+								}
+							}
+						}
+						// &_block1 {
+						// 	&::before {
+						// 		height: 50px;
+						// 	}
+						// }
+					}
+				}
+				&_inner {
+					position: relative;
+					@include mq(pc) {
+						display: flex;
+					}
+					@include mq(sp) {
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						top: 0;
+						left: 35px;
+						width: 2px;
+						height: 100%;
+						background-color: $primary-color;
+						@include mq(sp) {
+							left: 24px;
+							width: 1px;
+						}
+					}
+				}
+				&_block1 {
+					position: relative;
+					flex: 0 0 160px;
+					padding: 30px;
+					@include mq(sp) {
+						padding: 0 20px;
+					}
+				}
+				&_block2 {
+					flex: 1 1 100%;
+					padding: 30px;
+					padding-left: 0;
+					@include mq(sp) {
+						margin-top: 5px;
+						padding: 0 20px 0 45px;
+					}
+				}
+			}
+			.time {
+				position: relative;
+				z-index: 5;
+				display: flex;
+				align-items: center;
+				color: $primary-color;
+				font-size: 2.2rem;
+				font-family: $crimson;
+				line-height: 1.4;
+				@include mq(sp) {
+					font-size: 1.8rem;
+				}
+				&::before {
+					content: "";
+					display: block;
+					width: 0.5em;
+					height: 0.5em;
+					background-color: $primary-color;
+					border-radius: 50%;
+					margin-right: 0.6em;
+					@include mq(sp) {
+						margin-right: 15px;
+					}
+				}
+			}
+			.hd {
+				font-size: 1.8rem;
+				font-weight: bold;
+				@include mq(sp) {
+					font-size: 1.6rem;
+				}
+			}
+			.text {
+				margin-top: 5px;
+			}
+		}
+	}
+
+	// end
+	.interview_end {
+		margin-top: 100px;
+		@include mq(sp) {
+			margin-top: 50px;
+		}
+		&_inner {
+			max-width: 1140px;
+			@include mq(pc) {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+		}
+		.page_back {
+			width: 265px;
+			@include mq(sp) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+		.date {
+			@include mq(sp) {
+				font-size: 12px;
+				margin-top: 30px;
+				text-align: center;
+			}
+		}
+	}
+
+}

@@ -1,0 +1,602 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+
+.lower_mv {
+	@include mq(sp) {
+		height: 180px !important;
+	}
+}
+
+
+// 求人３P　common
+.lower-kyujin_l ,
+.lower-kyujin_d ,
+.lower-whatsnew {
+	// [ ie ] ofiのちらつき回避
+	@keyframes kyujinImageOfi {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	.job_img {
+		img {
+			opacity: 0;
+			animation: kyujinImageOfi 0.3s 0.2s forwards;
+		}
+	}
+
+
+	.kyujin_container {
+		max-width: 100%;
+		background-color: $bg-color;
+		padding-left: 0;
+		padding-right: 0;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: 0;
+			top: 0;
+			left: -30vw;
+			margin-top: -17%;
+			width: 2053px;
+			height: 1295px;
+			background: url(../img/bg_logo.png) no-repeat center center / contain;
+			pointer-events: none;
+			@include mq(sp) {
+				margin-top: -5%;
+				width: 2053px *0.5;
+				height: 1295px *0.5;
+			}
+		}
+		&_inner {
+			position: relative;
+			z-index: 5;
+		}
+		// max-width: 1480px;
+		// position: relative;
+		// &::before {
+		// 	content: "";
+		// 	display: block;
+		// 	position: absolute;
+		// 	z-index: -1;
+		// 	top: 200px;
+		// 	right: 70%;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	height: calc(100% - 200px);
+		// 	@include grad(180deg ,rgba(#AFE6ED,1) ,rgba(#ECF7F7,1));
+		// 	pointer-events: none;
+		// 	@include mq(sp) {
+		// 		top: 100px;
+		// 		height: calc(100% - 100px);
+		// 	}
+		// }
+	}
+	.gMap_link {
+		display: inline-block;
+		&::before {
+			background-image: url(../img/kyujin/ico_custom_location_color.png);
+		}
+	}
+	.btn {
+		transition: background 0.3s;
+		background-color: $primary-color;
+		background: linear-gradient(90deg, rgba(38, 173, 223,1) 0%, rgba(38, 133, 223,1) 50%, rgba(38, 173, 223,1) 100%);
+		background-size: 200% 100%;
+		border-radius: 7px;
+		@include mq(hover) {
+			&:hover {
+				opacity: 1;
+				background-position: right center;
+			}
+		}
+		&.btn_external {
+			background: $third-color;
+			background: linear-gradient(90deg, rgba(lighten($third-color ,10%),1) 0%, rgba(lighten($third-color , 0%),1) 50%, rgba(lighten($third-color ,10%),1) 100%);
+			background-size: 200% 100%;
+			@include mq(hover) {
+				&:hover {
+					opacity: 1;
+					background-position: right center;
+				}
+			}
+			// background: linear-gradient(90deg, rgba(lighten($secondary-color , 15%),1) 0%, rgba(lighten($secondary-color , 0%),1) 50%, rgba(lighten($secondary-color , 15%),1) 100%);
+			// background-size: 200% 100%;
+			// @include mq(hover) {
+			// 	&:hover {
+			// 		opacity: 1;
+			// 		background-position: right center;
+			// 	}
+			// }
+		}
+		&.btn_secondary {
+			@include mq(hover) {
+				&:hover {
+					opacity: 1;
+					background-color: $accent-color;
+				}
+			}
+		}
+	}
+
+	.pagination {
+		ul {
+			overflow: hidden;
+			border-radius: 7px;
+		}
+		li {
+			// &:first-child {
+			// 	overflow: hidden;
+			// 	border-radius: 7px 0 0 7px;
+			// }
+			// &:last-child {
+			// 	overflow: hidden;
+			// 	border-radius: 0 7px 7px 0;
+			// }
+			a {
+				background-color: #fff;
+				&:hover {
+					@include mq(hover) {
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
+
+	// youtube
+	.movie {
+		position: relative;
+		z-index: 1;
+		background-color: #fff;
+		padding: 50px;
+		border-radius: 30px;
+		box-shadow: 0 35px *0.5 70px *0.5 rgba(#26addf , 0.15);
+		@include mq(sp) {
+			border-radius: 15px;
+			margin-bottom: 20px;
+			padding: 20px 7%;
+		}
+		&_inner {
+			position: relative;
+			z-index: 1;
+			max-width: 700px;
+			width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			&::before {
+				content: '';
+				display: block;
+				width: 100%;
+				padding-top: 56.25%;
+			}
+			.youtube {
+				position: absolute;
+				top: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				border: none;
+			}
+		}
+	}
+
+	.fixed_convertion {
+		.convertion {
+			.btn_convertion {
+				background: $third-color;
+				background: linear-gradient(90deg, rgba(lighten($third-color ,10%),1) 0%, rgba(lighten($third-color , 0%),1) 50%, rgba(lighten($third-color ,10%),1) 100%);
+				background-size: 200% 100%;
+				border-radius: 7px;
+				@include mq(hover) {
+					&:hover {
+						opacity: 1;
+						background-position: right center;
+					}
+				}
+			}
+		}
+	}
+
+}
+
+// kyujin_l
+.lower-kyujin_l {
+	.kyujin_container {
+		position: relative;
+		padding-top: 100px;
+		padding-bottom: 70px;
+		@include mq(sp) {
+			padding-top: 15vw;
+			padding-bottom: 30px;
+		}
+	}
+
+	// 検索パネル
+	.p-kyujin-search {
+		position: relative;
+		.heading01 {
+			position: absolute;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			transform: translateY(-50%);
+			margin-top: -8px;
+			background-color: #fff;
+			padding: 0 10px 10px 0;
+		}
+	}
+	.search_panel {
+		border-top: none;
+		background-color: #fff;
+		margin-bottom: 60px;
+		padding: 0;
+		border-radius: 30px;
+		box-shadow: 0 35px *0.5 70px *0.5 rgba(#26addf , 0.15);
+		@include mq(sp) {
+			width: 106%;
+			margin-left: -3%;
+			margin-bottom: 40px;
+			border-radius: 15px;
+			padding-top: 10px;
+		}
+	}
+	.search_body {
+		padding: 90px 72px 72px 72px;
+		border-bottom: 3px solid $bg-color;
+		@include mq(sp) {
+			padding: 40px 20px;
+			border-width: 1px;
+		}
+	}
+	.custom-form {
+		margin-bottom: 0;
+		padding-bottom: 0;
+		border: none;
+		.selCity-box {
+			background-color: transparent;
+			padding: 0;
+			.selCity_alert {
+				color: $txt-color;
+				font-weight: normal;
+			}
+		}
+	}
+	.form_wrap {
+		// max-width: 1050px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.search-toggle {
+		position: absolute;
+		z-index: 10;
+		top: 0;
+		right: 50%;
+		transform: translate(50%,-50%);
+		margin-left: auto;
+		// margin-right: -10px;
+		margin-right: 0;
+		background: linear-gradient(90deg, rgba(38, 173, 223,1) 0%, rgba(38, 133, 223,1) 50%, rgba(38, 173, 223,1) 100%);
+		background-size: 200% 100%;
+		border-radius: 1000px;
+		transition: 0.3s;
+		@include mq(sp) {
+			// margin-right: -5px;
+			max-width: 200px;
+		}
+		@include mq(hover) {
+			&:hover {
+			  opacity: 1;
+				background-position: right center;
+			  .toggle_txt {
+				color: #fff;
+				}
+				.toggle_trigger {
+					background-color: $third-color;
+				}
+			}
+		  }
+		.toggle_txt {
+			position: relative;
+			z-index: 5;
+			// color: $primary-color;
+			text-indent: -3em;
+			@include mq(sp) {
+				font-size: 1.1rem;
+				margin-right: 13px;
+				padding: 0.7em 1em;
+				text-indent: 0;
+			}
+		}
+		.toggle_trigger {
+			flex-shrink: 0;
+			border-radius: 1000px;
+			background-color: $primary-color;
+			transition: background 0.3s;
+		}
+	}
+	.job_result_total {
+		padding: 60px 72px;
+		@include mq(sp) {
+			padding: 20px 7%;
+		}
+	}
+
+	// 求人リスト
+	.job {
+		background: #fff;
+		border: none !important;
+		padding: 50px;
+		border-radius: 30px;
+		box-shadow: 0 35px *0.5 70px *0.5 rgba(#26addf , 0.15);
+		@include mq(sp) {
+			padding: 30px 7%;
+			border-radius: 15px;
+		}
+		&:not(:first-child) {
+			margin-top: 40px;
+			@include mq(sp) {
+				margin-top: 15px;
+			}
+		}
+	}
+	.job_outline-head {
+		// @include mq(sp) {
+		@media (max-width: 480px) {
+			border: none;
+//			border-radius: 5px;
+//			background: #fff;
+			background: $bg-color;
+		}
+	}
+
+}
+
+// kyujin_d
+.lower-kyujin_d {
+	.kyujin_container {
+		position: relative;
+		padding-top: 100px;
+		padding-bottom: 70px;
+		@include mq(sp) {
+			padding-bottom: 30px;
+		}
+		@media (max-width: 480px) {
+			padding-top: 0;
+		}
+	}
+
+	.l-footer {
+		padding-bottom: 170px;
+	}
+
+	.pagetop {
+		z-index: 9;
+		bottom: 92px;
+		@include mq(sp) {
+			bottom: 65px;
+		}
+	}
+	.job_head_img {
+		@media (max-width: 480px) {
+			width: 118%;
+			margin-left: -9%;
+		}
+	}
+
+	.job_outline-head {
+		@media (max-width: 480px) {
+			border: none;
+			padding: 0;
+		}
+	}
+	.outline_ttl ,
+	.appeal_ttl {
+		display: inline-block;
+		background-color: $primary-color;
+		width: 100%;
+		color: #fff;
+		border-radius: 10px;
+	}
+
+	.job_body_block {
+		background-color: #fff;
+		padding: 50px;
+		border-radius: 30px;
+		box-shadow: 0 35px *0.5 70px *0.5 rgba(#26addf , 0.15);
+		@include mq(sp) {
+			border-radius: 15px;
+			padding: 25px 7%;
+		}
+	}
+
+	.fixed_convertion {
+		background-color: transparent;
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			// @include grad();
+			background-color: rgba($bg-color , 0.9);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+			opacity: 0.9;
+			pointer-events: none;
+		}
+		.phone {
+			.btn_phone {
+				color: $primary-color;
+			}
+			.phone_num {
+				&::before {
+					background-image: url(../img/kyujin/ico_custom_tel_color.png);
+				}
+			}
+			// @media (max-width: 767px) {
+				// border-radius: 100px;
+			// }
+		}
+		.convertion {
+			a {
+				// background-color: $txt-color;
+				@include mq(hover) {
+					&:hover {
+						opacity: 1;
+						background-color: $accent-color;
+					}
+				}
+				&::before {
+					@media (max-width: 374px) {
+						content: none;
+					}
+				}
+			}
+		}
+	}
+
+
+	/* text more */
+	//.overflowText > .overflowText_inner でテキスト囲う
+	// @include mq-down(sm) {
+	// 	.job_body_head_txt_inner {
+	// 		&:after {
+	// 			content: none !important;
+	// 		}
+	// 	}
+	// 	.job_post_slidedown {
+
+	// 		.job_lead {
+	// 			display: block;
+	// 			position: relative;
+	// 			overflow: hidden;
+	// 			transition: 0.4s !important;
+	// 			margin-bottom: 15px;
+	// 			&.js-active {
+	// 					margin-bottom: 0;
+	// 				transition: 0.5s cubic-bezier(0.7, 0, 0.84, 0) !important;
+	// 				//max-height: 3000px;
+	// 			}
+	// 		}
+
+	// 		.more_link_inner {
+	// 			position: relative;
+	// 			display: block;
+	// 			&.js-active {
+	// 				&:before {
+	// 					opacity: 0;
+	// 				}
+	// 				.more_link {
+	// 					&:after {
+	// 						transform: rotate(-135deg);
+	// 					}
+	// 				}
+	// 			}
+	// 			&:before {
+	// 				//content: "";
+	// 				display: block;
+	// 				position: absolute;
+	// 				bottom: 100%;
+	// 				left: 50%;
+	// 				transform: translateX(-50%);
+	// 	//                    width: 1000px;
+	// 				width: 100%;
+	// 				height: 30px;
+	// 				pointer-events: none;
+	// 				background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0.01) 1%,rgba(255,255,255,1) 100%);
+	// 				transition: 0.3s;
+	// 			}
+	// 		}
+	// 		.more_link {
+	// 			position: relative;
+	// 			display: block;
+	// 			width: 100%;
+	// 			text-align: center;
+	// 			text-indent: -0.8em;
+	// 			font-size: 12px;
+	// 			font-weight: bold;
+	// 			padding-top: 7px;
+	// 			padding-bottom: 7px;
+	// 			cursor: pointer;
+	// 			color: $primary-color;
+	// 			border: 1px solid;
+	// 			max-width: 130px;
+	// 			margin-left: auto;
+	// 			margin-right: auto;
+	// 			border-radius: 100px;
+	// 			&.js-active {
+	// 				border: 1px solid !important;
+	// 			}
+	// 			&:before {
+	// 				content: none;
+	// 			}
+	// 			&:after {
+	// 				content: "";
+	// 				display: inline-block;
+	// 				position: absolute;
+	// 				top: 50%;
+	// 				right: 1.3em;
+	// 				transform: translateY(-50%) rotate(45deg);
+	// 				width: 8px;
+	// 				height: 8px;
+	// 				border-bottom: 1px solid;
+	// 				border-right: 1px solid;
+	// 				margin-top: -0.1em;
+	// 				transform: 0.3s;
+	// 			}
+	// 		}
+	// 	}
+	// }
+}
+
+// whatsnew
+.lower-whatsnew {
+	.kyujin_container {
+		// padding-top: 30px;
+		padding-bottom: 30px;
+		@include mq(sp) {
+			padding-top: 0;
+			padding-bottom: 10px;
+		}
+	}
+
+	// 求人リスト
+	.job {
+		background: #fff;
+		border: none !important;
+		padding: 30px;
+		box-shadow: 0 3px 25px rgba($primary-color, 0.15);
+		@include mq(sp) {
+			padding: 30px 7%;
+		}
+		&:not(:first-child) {
+			margin-top: 30px;
+			@include mq(sp) {
+				margin-top: 15px;
+			}
+		}
+		&::before , &::after {
+			content: none;
+		}
+		&_inner {
+			padding-top: 0;
+			padding-bottom: 0;
+		}
+	}
+}

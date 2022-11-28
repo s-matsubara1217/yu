@@ -1,21 +1,155 @@
-// Foundation
-@use '../foundation/mixins' as *;
-// @include mq(sp)
-// @media screen and (max-width: 1200px)
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
 
 /* ============================================
-// FOOTER
+// pankuzu
 // ==========================================*/
-.footer{
+.l-breadcrumb {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
 }
 
 
 /* ============================================
-// PAGETOP
+// footer (common)
 // ==========================================*/
-.pagetop {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  z-index: 100;
+.l-footer {
+    @include mq(pc) {
+        padding: 100px 5% 0;
+    }
+    @include mq(sp) {
+        padding-top: 70px;
+        padding-bottom: 90px;
+    }
+    .footer {
+        &__inner {
+        }
+        &__block1 {
+            border-bottom: 1px solid $border-color;
+            @include mq(pc) {
+                padding-bottom: 65px;
+            }
+            @include mq(sp) {
+                display: none;
+            }
+        }
+        &__logo {
+            margin-bottom: 30px;
+            a {
+                display: inline-flex;
+                align-items: center;
+                color: $txt-color;
+                font-size: 1.6rem;
+                font-weight: bold;
+                &::before {
+                    content: "";
+                    display: block;
+                    position: relative;
+                    width: 1.7em;
+                    height: 1.56em;
+                    background: url(../img/ico_logo_pink.png) no-repeat center center / contain;
+                    margin-right: 0.6em;
+                }
+            }
+        }
+        &__linkColumn {
+            display: flex;
+            &__item {
+                // flex: 0 1 calc(100% / 6);
+                &:not(:first-child) {
+                    margin-left: 7%;
+                    @media (max-width: 1280px) {
+                        margin-left: 4%;
+                    }
+                }
+            }
+            .list {
+                &__item {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    &.-s {
+                        font-size: 1.4rem;
+                        font-weight: normal;
+                    }
+                }
+                a {
+                    color: $txt-color;
+                }
+            }
+        }
+
+        &__block2 {
+            @include mq(pc) {
+                margin-top: 65px;
+                display: flex;
+            }
+            @include mq(sp) {
+            }
+        }
+        &__info {
+            @include mq(pc) {
+                flex: 0 1 40%;
+                padding-right: 5%;
+            }
+            .hd {
+                font-weight: bold;
+            }
+        }
+        &__sns {
+            @include mq(sp) {
+                margin-top: 10px;
+            }
+        }
+
+        &__block3 {
+            position: relative;
+            margin-top: 130px;
+            width: 100%;
+            @include mq(pc) {
+                display: flex;
+                align-items: center;
+                height: 100px;
+            }
+            @include mq(sp) {
+                margin-top: 30px;
+            }
+        }
+        &__ga {
+            font-size: 1.2rem;
+            margin-right: 30px;
+            @include mq(sp) {
+                font-size: 1rem;
+            }
+            a {
+                color: $txt-color;
+            }
+        }
+        &__privacy {
+            font-size: 1.2rem;
+            @include mq(sp) {
+                font-size: 1rem;
+            }
+            a {
+                color: $txt-color;
+            }
+        }
+        &__cr {
+            font-size: 1.2rem;
+            margin-left: auto;
+            @include mq(sp) {
+                font-size: 1rem;
+                margin-top: 10px;
+            }
+        }
+    }
 }

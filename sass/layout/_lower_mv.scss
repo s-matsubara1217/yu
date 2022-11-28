@@ -1,0 +1,156 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+/* ============================================
+// lower mv (common)
+// ==========================================*/
+.l-mv {
+    position: relative;
+	z-index: 5;
+	margin-bottom: 5vw;
+	@media (min-width: 1441px) {
+		margin-bottom: 50px;
+	}
+	@include mq(sp) {
+		margin-bottom: 10vw;
+	}
+    &_inner {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+	}
+	&_block1 {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		@include mq(pc) {
+			flex: 0 1 30%;
+		}
+		@include mq(sp) {
+			position: relative;
+			z-index: 5;
+			order: 2;
+			margin-top: -3em;
+		}
+	}
+	&_block2 {
+		overflow: hidden;
+		width: 100%;
+		margin-bottom: 20px;
+		@include mq(pc) {
+			flex: 0 1 70%;
+			border-radius: 1000px 0 0 1000px;
+		}
+		@include mq(sp) {
+			order: 1;
+		}
+	}
+	&_block3 {
+
+		width: 100%;
+		@include mq(sp) {
+			order: 3;
+		}
+	}
+
+    .title {
+        position: relative;
+        z-index: 5;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+		font-size: 3.5vw;
+		@media (min-width: 1441px) {
+			font-size: 5.4rem;
+		}
+		@include mq(sp) {
+			align-items: center;
+			font-size: 4rem;
+		}
+        .en {
+            font-weight: 300;
+            font-family: $opensans;
+            margin-bottom: 0.3em;
+            letter-spacing: normal;
+            line-height: calc(110/100);
+            &:first-letter {
+                color: $secondary-color;
+            }
+			.js-word {
+				&:first-child {
+					color: $secondary-color;
+				}
+			}
+        }
+        .ja {
+			font-size: 0.33em;
+            font-weight: bold;
+			@media (min-width: 1441px) {
+				font-size: 1.8rem;
+			}
+            @include mq(sp) {
+                font-size: 1.2rem;
+            }
+        }
+		.js-word {
+			display: inline-block;
+			min-width: 0.25em;
+		}
+    }
+
+	.bg-image {
+		width: 100%;
+		.entity {
+			position: relative;
+			display: block;
+			position: relative;
+			width: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			&::before {
+				content: "";
+				display: block;
+				@media (min-width: 1441px) {
+					padding-top: 0;
+					height: 420px;
+				}
+				padding-top: calc((420/1076)*100%);
+				@include mq(sp) {
+					padding-top: calc((420/1076)*100% *1.3);
+				}
+			}
+		}
+
+	}
+
+
+    .lower-kyujin_d & ,
+    .lower-interview_d & {
+		margin-bottom: 3vw;
+		@media (min-width: 1441px) {
+			margin-bottom: 30px;
+		}
+    }
+}
+
+
+
+.l-intro {
+	margin-bottom: 70px;
+	@include mq(sp) {
+		margin-bottom: 30px;
+	}
+	&_inner {
+		@include mq(pc) {
+			text-align: center;
+		}
+	}
+}
