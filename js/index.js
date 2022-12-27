@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		speed: 750,
         // watchSlidesVisibility: true,
         watchSlidesProgress: true,
-        // loop: true,
+        loop: true,
         // thumbs: {
         //     swiper: swiper
         // }
@@ -75,6 +75,11 @@ document.addEventListener('DOMContentLoaded', function () {
 		const arrayTabs = Array.prototype.slice.call(groupTabs);
 		const index = arrayTabs.indexOf(this);
 		ancestorEle.getElementsByClassName('js-tab-target')[index].classList.add('is-show');
+
+
+		setTimeout(function () {
+			ScrollTrigger.refresh();
+		}, 1000);
 	};
 
 });

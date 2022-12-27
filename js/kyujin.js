@@ -26,6 +26,10 @@
 
             $(this).next().slideToggle('fast').end().children($apealTriggerIco).toggleClass('js-active');
 
+            setTimeout(function () {
+                ScrollTrigger.refresh();
+            }, 1000);
+
 //            var scrollAddPosition = 50,
 //                n = window.location.href.slice(window.location.href.indexOf('?') + 4),
 //                p = $(this).parent().offset().top;
@@ -94,6 +98,10 @@
                 $more_btn.on('click', function(){
                     $(this).toggleClass('js-active').parent().prev().toggleClass('js-active');
 
+                    setTimeout(function () {
+                        ScrollTrigger.refresh();
+                    }, 1000);
+
                     if($more_btn.hasClass('js-active')){
                         $slideDownText.css({ 'max-height' : maxHeight[1] });
                         $more_btn.text('閉じる');
@@ -159,6 +167,11 @@
             $toggleArea.on('click', function(){
                 $toggleArea.toggleClass('js-active');
                 $formMenu.slideToggle(speed);
+
+                setTimeout(function () {
+                    ScrollTrigger.refresh();
+                }, 1000);
+
             });
 
             function checkBreakPoint(mql) {
