@@ -360,88 +360,7 @@ function OptanonWrapper() { }
 						</div>
 					</div>
 				</div>
-				<div class="news__sub">
-					<div class="category js-stagger">
-						<div class="news__commonHead01 js-stagger-child">
-							<span class="eng">Category</span>
-							<h3 class="ja">カテゴリー</h3>
-						</div>
-						<ul class="category__list">
-							<!-- [※] 固定項目 ↓ -->
-							<li class="category__list__item -bgWhite -blue js-stagger-child">
-								<a href="#">
-									<span class="txt">すべて</span>
-								</a>
-							</li>
-							<li class="category__list__item -bgWhite -orange js-stagger-child">
-								<a href="#">
-									<span class="txt">友朋会</span>
-								</a>
-							</li>
-							<li class="category__list__item -bgWhite -yellow js-stagger-child">
-								<a href="#">
-									<span class="txt">清和苑</span>
-								</a>
-							</li>
-							<li class="category__list__item -bgWhite -lightblue js-stagger-child">
-								<a href="#">
-									<span class="txt">あいな清和苑</span>
-								</a>
-							</li>
-							<li class="category__list__item -bgWhite -green js-stagger-child">
-								<a href="#">
-									<span class="txt">宙カミーノ</span>
-								</a>
-							</li>
-							<li class="category__list__item -bgWhite -pink js-stagger-child">
-								<a href="#">
-									<span class="txt">その他</span>
-								</a>
-							</li>
-							<!-- [※] 固定項目 ↑ -->
-							<!-- [※] 任意項目 ↓ -->
-							<li class="category__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">お知らせ</span>
-								</a>
-							</li>
-							<li class="category__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">イベント</span>
-								</a>
-							</li>
-							<!-- [※] 任意項目 ↑ -->
-						</ul>
-					</div>
-					<div class="archive js-stagger">
-						<div class="news__commonHead01 js-stagger-child">
-							<span class="eng">Archive</span>
-							<h3 class="ja">アーカイブ</h3>
-						</div>
-						<ul class="archive__list js-stagger-child">
-							<li class="archive__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">2022年9月</span>
-								</a>
-							</li>
-							<li class="archive__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">2022年10月</span>
-								</a>
-							</li>
-							<li class="archive__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">2022年11月</span>
-								</a>
-							</li>
-							<li class="archive__list__item js-stagger-child">
-								<a href="#">
-									<span class="txt">2022年12月</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</div>
+				<!-- [※] navigation ajax -->
 			</div>
 		</div>
 
@@ -568,6 +487,23 @@ function OptanonWrapper() { }
 	<script src="js/vendor/gsap.min.js"></script>
 	<script src="js/vendor/ScrollTrigger.min.js"></script>
 	<script src="js/common.js"></script>
+
+	<!-- navigation Ajax -->
+  <script>
+    jQuery(function () {
+      jQuery.ajax({
+        type: 'GET',
+        url: 'navigation_ajax.htm?time=' + (new Date).getTime(),
+        success: function (data) {
+          $('.news__main').after(data);
+          // objectFitImages-----------------
+          objectFitImages('img.ofi');
+          // scroll animation event----------
+        }
+      });
+    });
+  </script>
+  <!-- //navigation Ajax -->
 
 </body>
 
