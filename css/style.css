@@ -1638,7 +1638,7 @@ h2, h3, h4 {
 .lower-news_d .news__main .body .link-holder .link.-external::before {
   content: "";
   display: inline-block;
-  background-image: url(../../img/news/ico_external_blue.png);
+  background-image: url(../img/news/ico_external_blue.png);
   background-size: contain;
   width: 16px;
   height: 11px;
@@ -1677,7 +1677,7 @@ h2, h3, h4 {
 .lower-news_d .news__main .pagination .prev a::before {
   content: "";
   display: inline-block;
-  background-image: url(../../img/news/ico_circlearrow_blue.png);
+  background-image: url(../img/news/ico_circlearrow_blue.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 17px;
@@ -1722,7 +1722,7 @@ h2, h3, h4 {
 .lower-news_d .news__main .pagination .next a::after {
   content: "";
   display: inline-block;
-  background-image: url(../../img/news/ico_circlearrow_blue.png);
+  background-image: url(../img/news/ico_circlearrow_blue.png);
   background-size: contain;
   background-repeat: no-repeat;
   width: 17px;
