@@ -374,20 +374,7 @@ function OptanonWrapper() { }
 							</p>
 						</div>
 					</div>
-					<div class="pagination js-stagger-child">
-						<div class="prev">
-							<a href="#">前へ</a>
-						</div>
-						<div class="pageback btnWrap l-blockWidth-s">
-							<a href="news_l.htm" class="btn-grad -round -reverse">
-								<span class="text">一覧に戻る</span>
-								<span class="ico -arrow"></span>
-							</a>
-						</div>
-						<div class="next">
-							<a href="#">次へ</a>
-						</div>
-					</div>
+					<!-- [※] pagination ajax -->
 				</div>
 				<!-- [※] navigation ajax -->
 			</div>
@@ -533,6 +520,24 @@ function OptanonWrapper() { }
     });
   </script>
   <!-- //navigation Ajax -->
+
+	<!-- pagination Ajax -->
+  <script>
+    jQuery(function () {
+      jQuery.ajax({
+        type: 'GET',
+        url: 'pagination_ajax.htm?time=' + (new Date).getTime(),
+        success: function (data) {
+          $('.news__main .body').after(data);
+          // objectFitImages-----------------
+          objectFitImages('img.ofi');
+          // scroll animation event----------
+        }
+      });
+    });
+  </script>
+  <!-- //pagination Ajax -->
+
 
 </body>
 
