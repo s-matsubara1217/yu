@@ -47,3 +47,22 @@ $bp: (
   background: linear-gradient($deg, $start 0%, $end 100%);
 }
 // @include global.grad(180deg ,rgba(0,0,0,1) ,rgba(50,50,50,1));
+
+
+//アスペクト比固定
+@mixin keepAspect($persentage){
+	position: relative;
+	z-index: 1;
+	&:before{
+		content: '';
+		display: block;
+		padding-top: $persentage;
+	}
+	img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}

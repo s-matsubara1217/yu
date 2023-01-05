@@ -157,6 +157,17 @@ $useCode: false;
   &.-round {
     border-radius: 300px;
   }
+  &.-reverse {
+    flex-direction: row-reverse;
+    
+    &.btn-grad {
+      .ico {
+        margin-left: 0;
+        margin-right: auto;
+        transform: scale(-1,1);
+      }
+    }
+  }
 
   .ico {
     position: relative;
