@@ -1,0 +1,591 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @media only screen and (max-width: 1200px)
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+
+/* ============================================
+// 新卒採用
+// ==========================================*/
+.lower-newgraduate {
+
+  // 共通
+  .newgraduate {
+    &__commonHead01 {
+      text-align: center;
+
+      .ja {
+        font-size: 4.4rem;
+        line-height: 1.2;
+        font-weight: 500;
+
+        &::first-letter {
+          color: $secondary-color;
+        }
+      }
+      .eng {
+        font-family: $opensans;
+        font-size: 1.6rem;
+      }
+    }
+  }
+
+  // イントロ
+  .sec__intro {
+    .intro {
+      &__inner {
+
+      }
+
+      .imgArea {
+        .img-holder {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin: 0 -60px;
+          margin-top: 12px;
+
+          .img {
+            img {
+              border-radius: 30px;
+            }
+
+            &.-border-red {
+              margin-right: 40px;
+              @media only screen and (max-width: 1200px) {
+                margin-right: 28px;
+              }
+
+              img {
+                border: 10px solid #f9d2c6;
+              }
+            }
+            &.-border-yellow {
+              margin-top: 32px;
+              margin-right: -32px;
+              @media only screen and (max-width: 1200px) {
+                margin-right: -24px;
+              }
+
+              img {
+                border: 10px solid #fffcce;
+              }
+            }
+            &.-border-blue {
+              margin-top: -100px;
+              margin-right: 36px;
+              @media only screen and (max-width: 1200px) {
+                margin-right: 24px;
+              }
+
+              img {
+                border: 10px solid #bce5f5;
+              }
+            }
+            &.-border-purple {
+              margin-top: -64px;
+
+              img {
+                border: 10px solid #e7cee3;
+              }
+            }
+          }
+        }
+        .txt-holder {
+          .txt {
+            color: #22aadd;
+            font-size: 4.6rem;
+            font-weight: bold;
+            line-height: 1.6;
+            @media only screen and (max-width: 1200px) {
+              font-size: 3.6rem;
+            }
+
+            &01 {
+
+            }
+            &02 {
+              margin-top: -64px;
+              text-align: right;
+            }
+          }
+        }
+      }
+      .txtArea {
+        margin-top: 96px;
+
+        .lead {
+          font-size: 2.4rem;
+          font-weight: bold;
+          line-height: 1.6;
+          text-align: center;
+        }
+        .desc {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+
+  // 活躍できる職場
+  .sec__jobs {
+    background-color: #e9f7fc;
+    padding: 72px 0 88px;
+    margin-top: 96px;
+
+    .jobs {
+      &__inner {
+
+      }
+
+      &__head {
+
+      }
+      &__body {
+        margin-top: 40px;
+      }
+
+      &__list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        &__item {
+          flex: 0 0 48.2%;
+          margin-right: 3.6%;
+          position: relative;
+          padding: 0 5% 40px;
+
+          // 白色背景
+          &::before {
+            content: '';
+            display: inline-block;
+            width: 100%;
+            height: calc(100% - 60px);
+            background-color: #fff;
+            border-radius: 30px;
+            pointer-events: none;
+            position: absolute;
+            top: 60px;
+            left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
+          .img-holder {
+            max-width: 420px;
+            margin: 0 auto;
+            position: relative;
+
+            .img {
+              @include keepAspect(66.6%);
+
+              img {
+                border-radius: 30px;
+              }
+            }
+          }
+          .txt-holder {
+            position: relative;
+            margin-top: 24px;
+            text-align: center;
+
+            .num {
+              font-size: 1.6rem;
+              color: $secondary-color;
+              font-family: $opensans;
+            }
+            .term {
+              font-size: 2.4rem;
+              font-weight: bold;
+              line-height: 1.6;
+            }
+            .desc {
+              text-align: left;
+              margin-top: 8px;
+            }
+            .link {
+              text-align: left;
+              font-weight: bold;
+              margin-top: 12px;
+
+              a {
+                color: $secondary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 働くメリット
+  .sec__merit {
+    margin-top: 72px;
+
+    .merit {
+      &__inner {
+
+      }
+
+      &__head {
+
+      }
+      &__body {
+        margin-top: 48px;
+      }
+
+      &__list {
+        &__item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-top: 48px;
+          &:first-child {
+            margin-top: 0;
+          }
+
+          // 共通
+          .img-holder {
+            flex: 0 0 35%;
+
+            .img {
+              @include keepAspect(66.6%);
+
+              img {
+                border-radius: 30px;
+              }
+            }
+          }
+          .txt-holder {
+            margin-top: 16px;
+            flex: 1 1 auto;
+
+            .term {
+              position: relative;
+              color: #22aadd;
+              font-size: 2.2rem;
+              font-weight: bold;
+              padding-left: 32px;
+              line-height: 1.6;
+
+              .num {
+                font-size: 12rem;
+                @include family(serif1);
+                color: #e9f7fc;
+                line-height: 1;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                z-index: -1;
+                transform: translateY(-50%);
+              }
+            }
+            .desc {
+              margin-top: 28px;
+            }
+          }
+
+          // 奇数
+          &:nth-child(odd) {
+            @include mq(pc) {
+              .img-holder {
+                margin-right: 5%;
+              }
+            }
+          }
+
+          // 偶数
+          &:nth-child(even) {
+            @include mq(pc) {
+              flex-direction: row-reverse;
+
+              .img-holder {
+                margin-left: 5%;
+              }
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  // 友朋会なら描けるキャリアもカラフル！
+  .sec__career {
+    margin-top: 64px;
+
+    .career {
+      &__inner {
+        @media only screen and (max-width: 1200px) {
+          padding-left: 28px;
+          padding-right: 28px;
+        }
+      }
+
+      &__head {
+        text-align: center;
+
+        .dot {
+          &__item {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: #222;
+            display: inline-block;
+
+            &:nth-child(2) {
+              background-color: $secondary-color;
+            }
+          }
+        }
+        .ttl {
+          font-size: 2.6rem;
+          font-weight: bold;
+          line-height: 1.6;
+          margin-top: 4px;
+        }
+        .lead {
+          margin-top: 12px;
+        }
+      }
+      &__body {
+        margin-top: 48px;
+      }
+
+      &__list {
+        &__item {
+          // 共通
+          margin-top: 48px;
+          position: relative;
+          padding: 48px 4.2% 32px;
+          border-radius: 30px;
+          @media only screen and (max-width: 1200px) {
+            padding: 48px 4% 32px;
+          }
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .num {
+            font-size: 3rem;
+            font-family: $opensans;
+            position: absolute;
+            top: 0;
+            left: 4.2%;
+            transform: translateY(-50%);
+            font-weight: 300;
+          }
+          .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .personal {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              .illust {
+
+              }
+              .name {
+                margin-left: 20px;
+                font-weight: bold;
+                font-size: 1.8rem;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+
+                .initial {
+                  font-size: 3.4rem;
+                  font-style: normal;
+                  display: inline-block;
+                  margin-right: 4px;
+                  line-height: 1;
+                }
+                .txt {
+                  line-height: 1;
+                  margin-bottom: 4px;
+                }
+              }
+            }
+            .year {
+              background-color: #fff;
+              border-radius: 100px;
+              display: inline-block;
+              padding: 10px 24px;
+              font-weight: bold;
+            }
+          }
+          .body {
+            margin-top: 24px;
+
+            .jobList {
+              display: flex;
+              justify-content: center;
+              align-items: flex-start;
+
+              &__item {
+                width: 190px;
+                margin-right: 28px;
+                @media only screen and (max-width: 1200px) {
+                  margin-right: 20px;
+                }
+
+                &:last-child {
+                  margin-right: 0;
+                }
+
+                .job {
+                  color: #fff;
+                  background-color: #eee;
+                  height: 56px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 100px;
+                }
+                .annotation {
+                  text-align: center;
+                  margin-top: 12px;
+                  font-size: 1.4rem;
+                  @media only screen and (max-width: 1200px) {
+                    font-size: 1.3rem;
+                  }
+                }
+              }
+            }
+          }
+
+          // -woman
+          &.-woman {
+            background-color: #fef8ed;
+
+            .head {
+              .year {
+                color: #ff9933;
+              }
+            }
+            .body {
+              .jobList {
+                &__item {
+                  .job {
+                    background-color: #ff9933;
+                  }
+                }
+              }
+            }
+          }
+          // -man
+          &.-man {
+            background-color: #f0f9fc;
+
+            .head {
+              .year {
+                color: #22aadd;
+              }
+            }
+            .body {
+              .jobList {
+                &__item {
+                  .job {
+                    background-color: #22aadd;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 募集要項
+  .sec__recruit {
+    .recruit {
+      &__inner {
+
+      }
+
+      &__head {
+        .message {
+          &__txt {
+
+          }
+          &__line {
+            &__item {
+              &.-red {
+
+              }
+              &.-yellow {
+
+              }
+              &.-blue {
+
+              }
+              &.-purple {
+
+              }
+            }
+          }
+        }
+      }
+      &__body {
+        .selectionList {
+          &__item {
+            .num {
+
+            }
+            .illust {
+
+            }
+            .term {
+
+            }
+            .desc {
+
+            }
+          }
+        }
+        .job-descriptionList {
+          &__item {
+            .term {
+
+            }
+            .desc {
+
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Special Movie
+  .sec__specialMovie {
+    .specialMovie {
+      &__inner {
+
+      }
+
+      &__head {
+
+      }
+      &__body {
+
+      }
+    }
+  }
+
+
+}
