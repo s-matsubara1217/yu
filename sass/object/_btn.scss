@@ -159,12 +159,27 @@ $useCode: false;
   }
   &.-reverse {
     flex-direction: row-reverse;
-    
+
     &.btn-grad {
       .ico {
         margin-left: 0;
         margin-right: auto;
         transform: scale(-1,1);
+      }
+    }
+  }
+  &.-deepBlue {
+    &:after {
+      background: #0338b3;
+    background: linear-gradient(90deg, #0338b3 0%, #032983 50%, #0338b3 100%);
+    background-size: 200% 100%;
+    }
+    @include mq(hover) {
+      &:hover {
+        opacity: 1;
+        &::after {
+          background-position: right center;
+        }
       }
     }
   }

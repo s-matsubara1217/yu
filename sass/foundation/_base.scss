@@ -332,6 +332,12 @@ $useCode: false;
 			bottom: 80px;
 		}
 	}
+	.lower-newgraduate & {
+		bottom: 10px + 114px;
+		@include mq(sp) {
+			bottom: 8px + 88px;
+		}
+	}
 	button {
 		outline: none;
 	}

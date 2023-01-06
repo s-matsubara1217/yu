@@ -1649,6 +1649,14 @@ $useCode: false;
 		}
 	}
 }
+.lower-newgraduate {
+	.pagetop {
+		bottom: 114px;
+		@include mq(sp) {
+			bottom: 88px;
+		}
+	}
+}
 
 
 /* mediaquery */

@@ -153,3 +153,13 @@ $useCode: false;
         }
     }
 }
+.lower-newgraduate {
+    .l-footer {
+        @include mq(pc) {
+            padding-bottom: 114px;
+        }
+        @include mq(sp) {
+            padding-bottom: 90px + 88px;
+        }
+    }
+}
