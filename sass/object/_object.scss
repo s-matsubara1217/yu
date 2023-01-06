@@ -1651,7 +1651,22 @@ $useCode: false;
 }
 
 
-
+/* mediaquery */
+.u-pcOnly {
+  @include mq(sp) {
+    display: none;
+  }
+}
+.u-tabOnly {
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+}
+.u-spOnly {
+  @include mq(pc) {
+    display: none;
+  }
+}
 
 
 $useCode: false;

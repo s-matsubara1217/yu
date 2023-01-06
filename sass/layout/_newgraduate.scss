@@ -24,6 +24,9 @@ $useCode: false;
         font-size: 4.4rem;
         line-height: 1.2;
         font-weight: 500;
+        @include mq(sp) {
+          font-size: 2.8rem;
+        }
 
         &::first-letter {
           color: $secondary-color;
@@ -32,6 +35,9 @@ $useCode: false;
       .eng {
         font-family: $opensans;
         font-size: 1.6rem;
+        @include mq(sp) {
+          font-size: 1.5rem;
+        }
       }
     }
   }
@@ -50,8 +56,17 @@ $useCode: false;
           align-items: flex-start;
           margin: 0 -60px;
           margin-top: 12px;
+          @include mq(sp) {
+            margin: 0;
+            margin-top: 8px;
+            flex-wrap: wrap;
+          }
 
           .img {
+            @include mq(sp) {
+              flex: 0 0 50%;
+            }
+
             img {
               border-radius: 30px;
             }
@@ -61,9 +76,15 @@ $useCode: false;
               @media only screen and (max-width: 1200px) {
                 margin-right: 28px;
               }
+              @include mq(sp) {
+                margin-right: 0;
+              }
 
               img {
                 border: 10px solid #f9d2c6;
+                @include mq(sp) {
+                  border: 6px solid #f9d2c6;
+                }
               }
             }
             &.-border-yellow {
@@ -72,9 +93,16 @@ $useCode: false;
               @media only screen and (max-width: 1200px) {
                 margin-right: -24px;
               }
+              @include mq(sp) {
+                margin-top: 0;
+                margin-right: 0;
+              }
 
               img {
                 border: 10px solid #fffcce;
+                @include mq(sp) {
+                  border: 6px solid #fffcce;
+                }
               }
             }
             &.-border-blue {
@@ -83,51 +111,132 @@ $useCode: false;
               @media only screen and (max-width: 1200px) {
                 margin-right: 24px;
               }
+              @include mq(sp) {
+                margin-top: 0;
+                margin-right: 0;
+              }
 
               img {
                 border: 10px solid #bce5f5;
+                @include mq(sp) {
+                  border: 6px solid #bce5f5;
+                }
               }
             }
             &.-border-purple {
               margin-top: -64px;
+              @include mq(sp) {
+                margin-top: 0;
+              }
 
               img {
                 border: 10px solid #e7cee3;
+                @include mq(sp) {
+                  border: 6px solid #e7cee3;
+                }
               }
             }
           }
         }
         .txt-holder {
+          &02 {
+            text-align: right;
+            @include mq(sp) {
+              margin-top: 20px;
+            }
+          }
+
           .txt {
             color: #22aadd;
             font-size: 4.6rem;
             font-weight: bold;
             line-height: 1.6;
+            position: relative;
+            display: inline-block;
             @media only screen and (max-width: 1200px) {
               font-size: 3.6rem;
             }
+            @include mq(sp) {
+              font-size: 2.4rem;
+            }
 
             &01 {
-
+              // デコ ボーダー四角 グレー
+              &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(../img/newgraduate/deco_border.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 220px;
+                height: 230px;
+                position: absolute;
+                top: -48px;
+                left: 132px;
+                z-index: -1;
+                @media only screen and (max-width: 1200px) {
+                  left: 96px;
+                }
+                @include mq(sp) {
+                  transform: scale(0.5);
+                  transform-origin: top left;
+                  top: -20px;
+                  left: 28px;
+                }
+              }
             }
             &02 {
               margin-top: -64px;
               text-align: right;
+
+              // デコ ボーダー四角 グレー
+              &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(../img/newgraduate/deco_border.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 220px;
+                height: 230px;
+                position: absolute;
+                top: -140px;
+                left: 88px;
+                z-index: -1;
+                @media only screen and (max-width: 1200px) {
+                  left: 72px;
+                }
+                @include mq(sp) {
+                  transform: scale(0.5);
+                  transform-origin: top right;
+                  top: -56px;
+                  left: auto;
+                  right: 28px;
+                }
+              }
             }
           }
         }
       }
       .txtArea {
         margin-top: 96px;
+        @include mq(sp) {
+          margin-top: 48px;
+        }
 
         .lead {
           font-size: 2.4rem;
           font-weight: bold;
           line-height: 1.6;
           text-align: center;
+          @include mq(sp) {
+            font-size: 1.8rem;
+          }
         }
         .desc {
           margin-top: 20px;
+          @include mq(sp) {
+            margin-top: 16px;
+          }
         }
       }
     }
@@ -138,6 +247,10 @@ $useCode: false;
     background-color: #e9f7fc;
     padding: 72px 0 88px;
     margin-top: 96px;
+    @include mq(sp) {
+      padding: 48px 0;
+      margin-top: 48px;
+    }
 
     .jobs {
       &__inner {
@@ -149,18 +262,33 @@ $useCode: false;
       }
       &__body {
         margin-top: 40px;
+        @include mq(sp) {
+          margin-top: 32px;
+        }
       }
 
       &__list {
         display: flex;
         justify-content: flex-start;
         align-items: stretch;
+        @include mq(sp) {
+          display: block;
+        }
 
         &__item {
           flex: 0 0 48.2%;
           margin-right: 3.6%;
           position: relative;
           padding: 0 5% 40px;
+          @include mq(sp) {
+            margin-right: 0;
+            margin-top: 32px;
+            padding: 0 7.2% 32px;
+
+            &:first-child {
+              margin-top: 0;
+            }
+          }
 
           // 白色背景
           &::before {
@@ -184,6 +312,9 @@ $useCode: false;
             max-width: 420px;
             margin: 0 auto;
             position: relative;
+            @include mq(sp) {
+              width: 90%;
+            }
 
             .img {
               @include keepAspect(66.6%);
@@ -197,16 +328,25 @@ $useCode: false;
             position: relative;
             margin-top: 24px;
             text-align: center;
+            @include mq(sp) {
+              margin-top: 16px;
+            }
 
             .num {
               font-size: 1.6rem;
               color: $secondary-color;
               font-family: $opensans;
+              @include mq(sp) {
+                font-size: 1.5rem;
+              }
             }
             .term {
               font-size: 2.4rem;
               font-weight: bold;
               line-height: 1.6;
+              @include mq(sp) {
+                font-size: 1.8rem;
+              }
             }
             .desc {
               text-align: left;
@@ -216,6 +356,9 @@ $useCode: false;
               text-align: left;
               font-weight: bold;
               margin-top: 12px;
+              @include mq(sp) {
+                margin-top: 8px;
+              }
 
               a {
                 color: $secondary-color;
@@ -230,6 +373,9 @@ $useCode: false;
   // 働くメリット
   .sec__merit {
     margin-top: 72px;
+    @include mq(sp) {
+      margin-top: 48px;
+    }
 
     .merit {
       &__inner {
@@ -241,6 +387,9 @@ $useCode: false;
       }
       &__body {
         margin-top: 48px;
+        @include mq(sp) {
+          margin-top: 32px;
+        }
       }
 
       &__list {
@@ -249,6 +398,11 @@ $useCode: false;
           justify-content: flex-start;
           align-items: flex-start;
           margin-top: 48px;
+          @include mq(sp) {
+            display: block;
+            margin-top: 36px;
+          }
+
           &:first-child {
             margin-top: 0;
           }
@@ -256,6 +410,9 @@ $useCode: false;
           // 共通
           .img-holder {
             flex: 0 0 35%;
+            @include mq(sp) {
+              margin-top: 12px;
+            }
 
             .img {
               @include keepAspect(66.6%);
@@ -268,6 +425,9 @@ $useCode: false;
           .txt-holder {
             margin-top: 16px;
             flex: 1 1 auto;
+            @include mq(sp) {
+              margin-top: 0;
+            }
 
             .term {
               position: relative;
@@ -276,6 +436,10 @@ $useCode: false;
               font-weight: bold;
               padding-left: 32px;
               line-height: 1.6;
+              @include mq(sp) {
+                font-size: 1.8rem;
+                padding-left: 24px;
+              }
 
               .num {
                 font-size: 12rem;
@@ -287,10 +451,16 @@ $useCode: false;
                 left: 0;
                 z-index: -1;
                 transform: translateY(-50%);
+                @include mq(sp) {
+                  font-size: 10rem;
+                }
               }
             }
             .desc {
               margin-top: 28px;
+              @include mq(sp) {
+                margin-top: 16px;
+              }
             }
           }
 
@@ -322,6 +492,9 @@ $useCode: false;
   // 友朋会なら描けるキャリアもカラフル！
   .sec__career {
     margin-top: 64px;
+    @include mq(sp) {
+      margin-top: 40px;
+    }
 
     .career {
       &__inner {
@@ -352,6 +525,9 @@ $useCode: false;
           font-weight: bold;
           line-height: 1.6;
           margin-top: 4px;
+          @include mq(sp) {
+            font-size: 2rem;
+          }
         }
         .lead {
           margin-top: 12px;
@@ -359,6 +535,9 @@ $useCode: false;
       }
       &__body {
         margin-top: 48px;
+        @include mq(sp) {
+          margin-top: 40px;
+        }
       }
 
       &__list {
@@ -370,6 +549,10 @@ $useCode: false;
           border-radius: 30px;
           @media only screen and (max-width: 1200px) {
             padding: 48px 4% 32px;
+          }
+          @include mq(sp) {
+            margin-top: 40px;
+            padding: 36px 7.2% 40px;
           }
 
           &:first-child {
@@ -384,19 +567,36 @@ $useCode: false;
             left: 4.2%;
             transform: translateY(-50%);
             font-weight: 300;
+            @include mq(sp) {
+              font-size: 2.2rem;
+              left: 8%;
+            }
+
           }
           .head {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            @include mq(sp) {
+              display: block;
+            }
 
             .personal {
               display: flex;
               justify-content: flex-start;
               align-items: center;
+              @include mq(sp) {
+                align-items: flex-start;
+                margin-bottom: -28px;
+              }
 
               .illust {
-
+                img {
+                  @include mq(sp) {
+                    transform: scale(0.8);
+                    transform-origin: center left;
+                  }
+                }
               }
               .name {
                 margin-left: 20px;
@@ -405,6 +605,11 @@ $useCode: false;
                 display: flex;
                 justify-content: flex-start;
                 align-items: flex-end;
+                @include mq(sp) {
+                  margin-left: 0;
+                  font-size: 1.5rem;
+                  margin-top: 8px;
+                }
 
                 .initial {
                   font-size: 3.4rem;
@@ -412,10 +617,16 @@ $useCode: false;
                   display: inline-block;
                   margin-right: 4px;
                   line-height: 1;
+                  @include mq(sp) {
+                    font-size: 2.4rem;
+                  }
                 }
                 .txt {
                   line-height: 1;
                   margin-bottom: 4px;
+                  @include mq(sp) {
+                    margin-bottom: 3px;
+                  }
                 }
               }
             }
@@ -425,6 +636,11 @@ $useCode: false;
               display: inline-block;
               padding: 10px 24px;
               font-weight: bold;
+              @include mq(sp) {
+                padding: 4px 20px;
+                margin-left: 64px;
+                margin-top: -48px;
+              }
             }
           }
           .body {
@@ -434,16 +650,60 @@ $useCode: false;
               display: flex;
               justify-content: center;
               align-items: flex-start;
+              @include mq(sp) {
+                display: block;
+              }
 
               &__item {
                 width: 190px;
                 margin-right: 28px;
+                position: relative;
                 @media only screen and (max-width: 1200px) {
                   margin-right: 20px;
+                }
+                @include mq(sp) {
+                  margin: 0 auto;
+                  margin-top: 32px;
+
+                  &:first-child {
+                    margin-top: 0;
+                  }
+                }
+
+                // ▶
+                &:after {
+                  content: '';
+                  display: inline-block;
+                  width: 0;
+                  height: 0;
+                  border-style: solid;
+                  border-width: 5.5px 0 5.5px 9px;
+                  position: absolute;
+                  top: 24px;
+                  right: -19px;
+                  @media only screen and (max-width: 1200px) {
+                    right: -15px;
+                  }
+
+                  @include mq(sp) {
+                    border-width: 9px 5.5px 0 5.5px;
+                    top: auto;
+                    bottom: -20px;
+                    right: auto;
+                    left: 50%;
+                    transform: translateX(-50%);
+                  }
                 }
 
                 &:last-child {
                   margin-right: 0;
+                  @include mq(sp) {
+                    margin-right: auto;
+                  }
+                  // ▶
+                  &:after {
+                    content: none !important;
+                  }
                 }
 
                 .job {
@@ -454,6 +714,9 @@ $useCode: false;
                   justify-content: center;
                   align-items: center;
                   border-radius: 100px;
+                  @include mq(sp) {
+                    height: 48px;
+                  }
                 }
                 .annotation {
                   text-align: center;
@@ -461,6 +724,9 @@ $useCode: false;
                   font-size: 1.4rem;
                   @media only screen and (max-width: 1200px) {
                     font-size: 1.3rem;
+                  }
+                  @include mq(sp) {
+                    margin-top: 8px;
                   }
                 }
               }
@@ -479,6 +745,14 @@ $useCode: false;
             .body {
               .jobList {
                 &__item {
+                  // ▶
+                  &:after {
+                    border-color: transparent transparent transparent #ff9933;
+                    @include mq(sp) {
+                      border-color: #ff9933 transparent transparent transparent;
+                    }
+                  }
+
                   .job {
                     background-color: #ff9933;
                   }
@@ -498,6 +772,14 @@ $useCode: false;
             .body {
               .jobList {
                 &__item {
+                  // ▶
+                  &:after {
+                    border-color: transparent transparent transparent #22aadd;
+                    @include mq(sp) {
+                      border-color: #22aadd transparent transparent transparent;
+                    }
+                  }
+
                   .job {
                     background-color: #22aadd;
                   }
@@ -511,59 +793,229 @@ $useCode: false;
   }
 
   // 募集要項
-  .sec__recruit {
-    .recruit {
-      &__inner {
+  .sec__l-recruit {
+    position: relative;
+    z-index: 2;
+    margin-top: 96px;
+    padding-top: 72px;
+    @include mq(sp) {
+      margin-top: 48px;
+      padding-top: 40px;
+    }
 
+    // 背景色 水色
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 440px;
+      background-color: #e9f7fc;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .l-recruit {
+      &__inner {
+        max-width: 1040px + 140px;
       }
 
       &__head {
         .message {
-          &__txt {
+          margin-bottom: 56px;
+          @include mq(sp) {
+            margin-bottom: 36px;
+          }
 
+          &__txt {
+            font-size: 2.2rem;
+            font-weight: bold;
+            text-align: center;
+            @include mq(sp) {
+              font-size: 1.8rem;
+              line-height: 1.6;
+            }
           }
           &__line {
-            &__item {
-              &.-red {
+            width: 260px;
+            height: 6px;
+            margin: 0 auto;
+            margin-top: 6px;
+            display: flex;
+            @include mq(sp) {
+              margin-top: 12px;
+              width: 180px;
+              height: 5px;
+            }
 
+            &__item {
+              flex: 1 1 auto;
+              &.-red {
+                background-color: #f9d2c6;
               }
               &.-yellow {
-
+                background-color: #fffcce;
               }
               &.-blue {
-
+                background-color: #bce5f5;
               }
               &.-purple {
-
+                background-color: #e7cee3;
               }
             }
           }
         }
       }
       &__body {
-        .selectionList {
-          &__item {
-            .num {
+        margin-top: 48px;
+        @include mq(sp) {
+          margin-top: 28px;
+        }
 
+        .selectionList {
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+          @include mq(sp) {
+            display: block;
+            position: relative;
+
+            // 背景色 水色
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 200%;
+              height: calc(100% - 100px);
+              background-color: #e9f7fc;
+              position: absolute;
+              bottom: 100px;
+              left: -50%;
+              z-index: -1;
+            }
+          }
+
+          &__item {
+            flex: 0 0 22.15%;
+            background-color: #fff;
+            border: 8px solid #d2eef8;
+            border-radius: 30px;
+            position: relative;
+            text-align: center;
+            padding: 32px 0 24px;
+            margin-right: 3.8%;
+            @include mq(sp) {
+              width: 75%;
+              margin: 0 auto;
+              margin-top: 56px;
+              &:first-child {
+                margin-top: 0;
+              }
+            }
+
+            &:last-child {
+              margin-right: 0;
+              @include mq(sp) {
+                margin-right: auto;
+              }
+
+              // アイコン dotarrow
+              &:after {
+                content: none;
+              }
+            }
+
+            // アイコン dotarrow
+            &:after {
+              content: '';
+              display: inline-block;
+              background-image: url(../img/newgraduate/ico_dotarrow_blue.png);
+              background-size: contain;
+              background-repeat: no-repeat;
+              width: 44px;
+              height: 22px;
+              position: absolute;
+              top: 50%;
+              right: -36px;
+              transform: translateY(-50%);
+              @include mq(sp) {
+                top: auto;
+                right: auto;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%) rotate(90deg);
+              }
+            }
+
+            .num {
+              font-size: 3.6rem;
+              color: #22aadd;
+              line-height: 1;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translate(-50%,-50%);
             }
             .illust {
-
+              height: 70px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                margin: 0 auto;
+              }
             }
             .term {
-
+              font-size: 2.2rem;
+              color: #22aadd;
+              line-height: 1.6;
+              font-weight: bold;
+              margin-top: 8px;
+              @include mq(sp) {
+                font-size: 2rem;
+              }
             }
             .desc {
-
+              margin-top: 4px;
             }
           }
         }
         .job-descriptionList {
-          &__item {
-            .term {
+          margin: 0 20px;
+          margin-top: 56px;
+          border-bottom: 1px solid #e7e7e7;
+          @include mq(sp) {
+            margin: 0;
+            margin-top: 32px;
+          }
 
+          &__item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            border-top: 1px solid #e7e7e7;
+            padding: 20px 0;
+            @include mq(sp) {
+              display: block;
+              padding: 16px 20px;
+            }
+
+            .term {
+              flex: 0 0 180px;
+              font-weight: bold;
+              padding-left: 40px;
+              padding-right: 20px;
+              @include mq(sp) {
+                padding: 0;
+                font-size: 1.5rem;
+              }
             }
             .desc {
-
+              flex: 1 1 auto;
+              padding: 0 20px;
+              @include mq(sp) {
+                padding: 0;
+              }
             }
           }
         }
@@ -573,19 +1025,87 @@ $useCode: false;
 
   // Special Movie
   .sec__specialMovie {
+    background-color: #e9f7fc;
+    margin-top: 88px;
+    padding: 72px 0 88px;
+    position: relative;
+    @include mq(sp) {
+      margin-top: 48px;
+      padding: 40px 0 56px;
+    }
+
+    // 背景 ロゴ 白色
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url(../img/newgraduate/bg_logo.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1242px;
+      height: 783px;
+      position: absolute;
+      top: -200px;
+      left: -160px;
+      @include mq(sp) {
+        transform: scale(0.4);
+        transform-origin: top left;
+        top: -60px;
+        left: -120px;
+      }
+    }
+
     .specialMovie {
       &__inner {
 
       }
 
       &__head {
+        .eng {
+          font-size: 4.5rem;
+          font-family: $opensans;
+          font-weight: 300;
+          @include mq(sp) {
+            font-size: 3rem;
+          }
 
+          &::first-letter {
+            color: $secondary-color;
+          }
+        }
       }
       &__body {
+        margin-top: 24px;
 
+      // youtube
+      .movie {
+        position: relative;
+        z-index: 1;
+        &_inner {
+          position: relative;
+          z-index: 1;
+          max-width: 640px;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            // padding-top: 73.125%;
+            padding-top: 56.25%;
+          }
+          .youtube {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+          }
+        }
+      }
       }
     }
   }
-
 
 }
