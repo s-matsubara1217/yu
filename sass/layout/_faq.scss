@@ -1,0 +1,157 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @media only screen and (max-width: 1200px)
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+
+/* ============================================
+// よくある質問
+// ==========================================*/
+.lower-faq {
+
+  .faq {
+    background-color: $bg-color;
+    padding: 80px 0 160px;
+    @media only screen and (max-width: 1200px) {
+      padding-bottom: 120px;
+    }
+
+    &__list {
+      &__item {
+        margin-top: 40px;
+        &:first-child {
+          margin-top: 0;
+        }
+
+        .txt-question {
+          font-size: 1.8rem;
+          font-weight: bold;
+          line-height: 1.6;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          padding-bottom: 16px;
+          padding-right: 32px;
+          border-bottom: 1px solid #e7e7e7;
+
+          // Q
+          &::before {
+            content: 'Q';
+            font-family: $opensans;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #fff;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30;
+            background: rgb(43,175,224);
+            background: linear-gradient(90deg, rgba(43,175,224,1) 0%, rgba(38,135,223,1) 50%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 20px;
+            margin-top: -2px;
+            flex-shrink: 0;
+          }
+        }
+        .txt-answer {
+          padding-top: 16px;
+          padding-left: 48px;
+          padding-right: 32px;
+        }
+      }
+    }
+  }
+
+  // タブ切り替え関連
+  .tab-group {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0 14%;
+    height: 85px;
+
+    .tab {
+      flex: 1 1 auto;
+      width: 33%;
+      height: 72px;
+      cursor: pointer;
+      background-color: #d5eff9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 6px;
+      transition: background 0.3s;
+      @include mq(hover) {
+        &:hover {
+          background-color: darken(#d5eff9,5%);
+        }
+      }
+
+      &.is-active {
+        height: 85px;
+        background:#ffffff;
+        transition: all 0.3s ease;
+        border-top: 3px solid $secondary-color;
+        pointer-events: none;
+      }
+
+      .ja {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+    }
+  }
+  .panel-group {
+    .panel {
+      display: none;
+      opacity: 0;
+      background-color: #fff;
+      padding: 72px 10% 88px;
+      border-radius: 30px;
+      position: relative;
+      overflow: hidden;
+
+      // 背景ロゴ 水色
+      &::before {
+        content: '';
+        display: inline-block;
+        background-image: url(../img/faq/bg_logo_blue.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 825px;
+        height: 520px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      &.is-show {
+        display: block;
+        animation-name: displayAnime;
+        animation-duration: 0.8s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+  @keyframes displayAnime{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+}
