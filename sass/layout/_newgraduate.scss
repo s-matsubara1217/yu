@@ -15,6 +15,12 @@ $useCode: false;
 // ==========================================*/
 .lower-newgraduate {
 
+  .l-mv {
+    @include mq(sp) {
+      margin-bottom: 5vw;
+    }
+  }
+
   // 共通
   .newgraduate {
     &__commonHead01 {
@@ -57,9 +63,10 @@ $useCode: false;
           margin: 0 -60px;
           margin-top: 12px;
           @include mq(sp) {
-            margin: 0;
-            margin-top: 8px;
             flex-wrap: wrap;
+            width: 85%;
+            margin: 0 auto;
+            margin-top: 8px;
           }
 
           .img {
@@ -78,6 +85,7 @@ $useCode: false;
               }
               @include mq(sp) {
                 margin-right: 0;
+                margin-left: -24px;
               }
 
               img {
@@ -114,6 +122,7 @@ $useCode: false;
               @include mq(sp) {
                 margin-top: 0;
                 margin-right: 0;
+                margin-left: 24px;
               }
 
               img {
@@ -125,6 +134,7 @@ $useCode: false;
             }
             &.-border-purple {
               margin-top: -64px;
+              margin-right: -24px;
               @include mq(sp) {
                 margin-top: 0;
               }
@@ -157,7 +167,7 @@ $useCode: false;
               font-size: 3.6rem;
             }
             @include mq(sp) {
-              font-size: 2.4rem;
+              font-size: 2.2rem;
             }
 
             &01 {
@@ -180,7 +190,7 @@ $useCode: false;
                 @include mq(sp) {
                   transform: scale(0.5);
                   transform-origin: top left;
-                  top: -20px;
+                  top: -12px;
                   left: 28px;
                 }
               }
@@ -208,7 +218,7 @@ $useCode: false;
                 @include mq(sp) {
                   transform: scale(0.5);
                   transform-origin: top right;
-                  top: -56px;
+                  top: -68px;
                   left: auto;
                   right: 28px;
                 }
@@ -280,6 +290,9 @@ $useCode: false;
           margin-right: 3.6%;
           position: relative;
           padding: 0 5% 40px;
+          @media all and (-ms-high-contrast: none) {
+            flex: 0 0 38.2%;
+          }
           @include mq(sp) {
             margin-right: 0;
             margin-top: 32px;
@@ -961,6 +974,9 @@ $useCode: false;
               display: flex;
               justify-content: center;
               align-items: center;
+              @media all and (-ms-high-contrast: none) {
+                justify-content: flex-start;
+              }
               img {
                 margin: 0 auto;
               }
@@ -1120,6 +1136,12 @@ $useCode: false;
     display: flex;
     justify-content: center;
     align-items: center;
+    transform: translateY(100%);
+    transition: transform 0.4s;
+    transition-timing-function: ease-in-out;
+    @media all and (-ms-high-contrast: none) {
+      transform: translate(0);
+    }
     @include mq(sp) {
       padding: 16px;
     }
@@ -1134,7 +1156,9 @@ $useCode: false;
 
       .btn-grad {
         padding-left: 3em;
-
+        @media all and (-ms-high-contrast: none) {
+          padding-right: 3em;
+        }
       }
       .text {
         font-size: 1.6rem;
@@ -1142,6 +1166,11 @@ $useCode: false;
           font-size: 1.5rem;
         }
       }
+    }
+  }
+  &.js-scroll {
+    .fixed-conversion {
+      transform: translateY(0);
     }
   }
 
