@@ -17,7 +17,7 @@ $useCode: false;
 
   .l-mv {
     @include mq(sp) {
-      margin-bottom: 5vw;
+      margin-bottom: 3vw;
     }
   }
 
@@ -64,7 +64,7 @@ $useCode: false;
           margin-top: 12px;
           @include mq(sp) {
             flex-wrap: wrap;
-            width: 85%;
+            width: 80%;
             margin: 0 auto;
             margin-top: 8px;
           }
@@ -85,7 +85,7 @@ $useCode: false;
               }
               @include mq(sp) {
                 margin-right: 0;
-                margin-left: -24px;
+                margin-left: -32px;
               }
 
               img {
@@ -122,7 +122,7 @@ $useCode: false;
               @include mq(sp) {
                 margin-top: 0;
                 margin-right: 0;
-                margin-left: 24px;
+                margin-left: 32px;
               }
 
               img {
@@ -134,7 +134,7 @@ $useCode: false;
             }
             &.-border-purple {
               margin-top: -64px;
-              margin-right: -24px;
+              margin-right: -32px;
               @include mq(sp) {
                 margin-top: 0;
               }
@@ -167,7 +167,7 @@ $useCode: false;
               font-size: 3.6rem;
             }
             @include mq(sp) {
-              font-size: 2.2rem;
+              font-size: 2rem;
             }
 
             &01 {
