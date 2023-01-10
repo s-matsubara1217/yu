@@ -19,7 +19,7 @@ $useCode: false;
 		margin-bottom: 50px;
 	}
 	@include mq(sp) {
-		margin-bottom: 10vw;
+		margin-bottom: 6vw;
 	}
     &_inner {
 		display: flex;
@@ -147,5 +147,11 @@ $useCode: false;
 	margin-bottom: 70px;
 	@include mq(sp) {
 		margin-bottom: 30px;
+	}
+
+	&.-center {
+		@include mq(pc) {
+			text-align: center;
+		}
 	}
 }
