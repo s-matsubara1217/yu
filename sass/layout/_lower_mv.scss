@@ -148,9 +148,4 @@ $useCode: false;
 	@include mq(sp) {
 		margin-bottom: 30px;
 	}
-	&_inner {
-		@include mq(pc) {
-			text-align: center;
-		}
-	}
 }
