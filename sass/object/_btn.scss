@@ -216,6 +216,11 @@ $useCode: false;
       height: 16px;
       background: url(../img/ico-lenz-white.png) no-repeat center center / contain;
     }
+    &.-pdf {
+      width: 27px;
+      height: 16px;
+      background: url(../img/company/ico_pdf.png) no-repeat center center / contain;
+    }
   }
   .text {
     position: relative;

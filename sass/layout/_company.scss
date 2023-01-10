@@ -1,0 +1,377 @@
+@charset "utf-8";
+@use "../global" as *;
+
+$useCode: false;
+@if $useCode {}
+// @include mq(pc) {}
+// @include mq(sp) {}
+// @media only screen and (max-width: 1200px)
+// @include mq(hover) {}
+// background: rgba(0,0,0,0.1);
+
+
+/* ============================================
+// 法人案内
+// ==========================================*/
+.lower-company {
+
+  // 共通
+  .company {
+    &__commonHead01 {
+      text-align: center;
+
+      .ja {
+        font-size: 4.4rem;
+        line-height: 1.2;
+        font-weight: 400;
+        @include mq(sp) {
+          font-size: 2.8rem;
+        }
+
+        &::first-letter {
+          color: $secondary-color;
+        }
+      }
+      .eng {
+        font-family: $opensans;
+        font-size: 1.6rem;
+        @include mq(sp) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+
+  // 友朋会ご挨拶
+  .sec__intro {
+    position: relative;
+    padding-bottom: 100px;
+
+    // 背景画像
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url(../../img/company/intro_bg.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 999px;
+      height: 691px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      opacity: 0.2;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .intro {
+      &__inner {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      &__head {
+        flex: 0 0 31%;
+
+        .ttl {
+          img {
+            margin-right: auto;
+            margin-left: 30%;
+          }
+        }
+      }
+      &__body {
+        flex: 1 1 auto;
+
+        .txt {
+          &.-bold {
+            font-size: 2.2rem;
+            font-weight: bold;
+            line-height: 1.6;
+            @media only screen and (max-width: 1200px) {
+              font-size: 2rem;
+            }
+          }
+          &.-blue {
+            font-size: 2rem;
+            color: #22aabb;
+            @include family(serif1);
+            margin-top: 24px;
+
+            br {
+              @media only screen and (max-width: 1200px) {
+                display: none;
+              }
+            }
+          }
+          &.-min {
+            margin-top: 32px;
+            text-shadow: 1px 1px 8px #FFF, -1px -1px 8px #FFF,
+              -1px 1px 8px #FFF, 1px -1px 8px #FFF,
+              0px 1px 8px #FFF,  0 -1px 8px #FFF,
+              -1px 0 8px #FFF, 1px 0 8px #FFF;
+          }
+        }
+        .name {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          margin-top: 40px;
+
+          .img {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  // 法人理念
+  .sec__philosophy {
+    background-color: $bg-color;
+    padding: 100px 0 120px;
+
+    .philosophy {
+      &__inner {
+
+      }
+      &__head {
+
+      }
+      &__body {
+        .text {
+          @include family(serif1);
+          font-size: 3.4rem;
+          text-align: center;
+          font-weight: 400;
+          margin-top: 40px;
+        }
+      }
+
+      &__list {
+        margin-top: 64px;
+
+        &__item {
+          background-color: #fff;
+          padding: 56px 40px 48px;
+          border-radius: 30px;
+          position: relative;
+          max-width: 1000px;
+          margin: 0 auto;
+          margin-top: 72px;
+
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            position: absolute;
+            top: -40px;
+            left: 6.4%;
+
+            img {
+              border-radius: 50%;
+            }
+          }
+          .eng {
+            font-family: $opensans;
+            color: #22aabb;
+            font-size: 3rem;
+            position: absolute;
+            top: 0;
+            right: 6.4%;
+            transform: translateY(-50%);
+            font-weight: 300;
+          }
+          .body {
+            text-align: center;
+
+            .term {
+              font-size: 2.2rem;
+              font-weight: bold;
+              line-height: 1.6;
+            }
+            .dot {
+              &__item {
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #222;
+                display: inline-block;
+
+                &:nth-child(2) {
+                  background-color: $secondary-color;
+                }
+              }
+            }
+            .desc {
+              font-size: 1.6rem;
+              margin-top: 8px;
+
+              &.u-tabOnly {
+                @media only screen and (min-width: 1200px) {
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 法人概要
+  .sec__profile {
+    padding-top: 100px;
+
+    .profile {
+      &__inner {
+
+      }
+      &__head {
+
+      }
+      &__body {
+        margin-top: 32px;
+
+        .profileList {
+          max-width: 800px;
+          margin: 0 auto;
+
+          &__item {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px 4%;
+
+            // 偶数
+            &:nth-child(even) {
+              background-color: $bg-color;
+            }
+
+            .term {
+              flex: 0 0 220px;
+              padding-right: 20px;
+              font-weight: bold;
+              font-size: 1.6rem;
+            }
+            .desc {
+              flex: 1 1 auto;
+              font-size: 1.6rem;
+            }
+            .map {
+              font-weight: bold;
+              color: #22aabb;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+
+              // アイコン location
+              &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(../img/company/ico_location.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 14px;
+                height: 14px;
+              }
+            }
+          }
+        }
+        .profileBlock {
+          max-width: 1000px;
+          margin: 0 auto;
+          margin-top: 48px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+          flex-wrap: wrap;
+          margin: 32px auto -16px;
+
+          &__item {
+            flex: 0 0 48%;
+            margin: 16px 0;
+            background-color: $bg-color;
+            padding: 32px;
+            padding-bottom: 40px;
+            border-radius: 30px;
+            &:nth-child(2n+1) {
+              margin-right: 4%;
+            }
+
+            .term {
+              font-size: 1.8rem;
+              font-weight: bold;
+              line-height: 1.6;
+              @media only screen and (max-width: 1200px) {
+                font-size: 1.7rem;
+              }
+            }
+            .btnWrap {
+              margin-top: 12px;
+              a {
+                padding: 1.2em 2em;
+              }
+              .text {
+                line-height: 1.6;
+                padding-right: 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 沿革
+  .sec__history {
+    margin-top: 120px;
+
+    .separateImgs {
+      &__list {
+        align-items: stretch !important;
+
+        &__item {
+          display: flex !important;
+          flex-direction: column;
+          justify-content: space-between;
+          flex: 0 0 460px !important;
+          max-width: 460px;
+          @media screen and (max-width: 767px) {
+            flex: 0 0 230px !important;
+          }
+        }
+      }
+    }
+
+    .history {
+      &__inner {
+
+      }
+      &__head {
+
+      }
+      &__body {
+
+      }
+
+      &__list {
+        &__item {
+          .date {
+
+          }
+          .desc {
+
+          }
+        }
+      }
+    }
+  }
+
+}
