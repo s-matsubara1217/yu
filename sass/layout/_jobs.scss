@@ -24,6 +24,7 @@ $useCode: false;
     }
     @include mq(sp) {
       padding-top: 48px;
+      padding-bottom: 64px;
     }
 
     .dot {
@@ -103,9 +104,15 @@ $useCode: false;
         border-radius: 30px;
         padding: 56px 6.25% 60px;
         overflow: hidden;
+        margin-top: 60px;
         @include mq(sp) {
           border-radius: 20px;
           padding: 32px 7.2% 40px;
+          margin-top: 32px;
+        }
+
+        &:first-child {
+          margin-top: 0;
         }
 
         .head {
@@ -125,9 +132,7 @@ $useCode: false;
               color: $secondary-color;
             }
           }
-          .btnWrap {
-            margin-left: 56px;
-          }
+
         }
         .body {
           margin-top: 48px;
@@ -139,7 +144,9 @@ $useCode: false;
             display: flex;
             justify-content: flex-start;
             align-items: flex-start;
-            display: block;
+            @include mq(sp) {
+              display: block;
+            }
 
             &__img {
               flex: 0 0 31.4%;
@@ -166,6 +173,10 @@ $useCode: false;
             background-color: #fff7fc;
             border-radius: 20px;
             padding: 28px 4% 24px;
+            @include mq(sp) {
+              margin-top: 24px;
+              padding: 24px 7.2% 24px;
+            }
 
             &__ttl {
               line-height: 1.6;
@@ -174,6 +185,10 @@ $useCode: false;
               display: flex;
               justify-content: flex-start;
               align-items: flex-start;
+              @include mq(sp) {
+                font-size: 1.6rem;
+                align-items: center;
+              }
 
               // icon megaphone_pink
               &::before {
@@ -188,6 +203,10 @@ $useCode: false;
                 height: 17px;
                 margin-right: 16px;
                 margin-top: 4px;
+                @include mq(sp) {
+                  margin-top: 0;
+                  margin-right: 12px;
+                }
               }
             }
             &__desc {
@@ -204,6 +223,9 @@ $useCode: false;
               display: flex;
               justify-content: flex-start;
               align-items: flex-start;
+              @include mq(sp) {
+                font-size: 1.6rem;
+              }
 
               // icon timer_blue
               &::before {
@@ -218,12 +240,16 @@ $useCode: false;
                 height: 23px;
                 margin-right: 12px;
                 margin-top: 2px;
+                @include mq(sp) {
+                  margin-top: 0;
+                  margin-right: 10px;
+                }
               }
             }
             &__swiper {
               width: 230px;
               height: 100%;
-              margin-top: 12px;
+              margin-top: 16px;
               position: relative;
 
               &-slide {
@@ -291,6 +317,9 @@ $useCode: false;
                   font-size: 1.6rem;
                   line-height: 1.6;
                   margin-top: 16px;
+                  @include mq(sp) {
+                    font-size: 1.5rem;
+                  }
                 }
               }
               &-accesories {
@@ -299,12 +328,18 @@ $useCode: false;
                 display: flex;
                 justify-content: flex-start;
                 align-items: center;
+                @include mq(sp) {
+                  margin-top: 16px;
+                }
               }
               &-button {
                 display: flex;
                 justify-content: flex-start;
                 align-items: stretch;
                 margin-right: 60px;
+                @include mq(sp) {
+                  margin-right: 32px;
+                }
 
                 &-prev,
                 &-next {
@@ -335,12 +370,22 @@ $useCode: false;
                 @media only screen and (max-width: 1200px) {
                   width: 660px;
                 }
+                @include mq(sp) {
+                  width: 184px;
+                }
 
                 .swiper-pagination-progressbar-fill {
                   background-color: #22aadd;
                 }
               }
             }
+          }
+        }
+        .btnWrap {
+          margin-left: 56px;
+          @include mq(sp) {
+            margin-left: 0;
+            margin-top: 32px;
           }
         }
       }

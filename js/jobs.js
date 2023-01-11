@@ -4,6 +4,7 @@
 const oneday_swiper = new Swiper('.oneday__swiper', {
   // loop: true,
   spaceBetween: 20,
+  speed: 500,
 
   navigation: {
     nextEl: '.oneday__swiper-button-next',
@@ -14,6 +15,12 @@ const oneday_swiper = new Swiper('.oneday__swiper', {
     el: '.oneday__swiper-pagination',
     type: "progressbar",
   },
+
+  breakPoints: {
+    834: {
+      spaceBetween: 12,
+    }
+  }
 });
 
 
