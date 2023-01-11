@@ -450,8 +450,11 @@ $useCode: false;
               padding-left: 32px;
               line-height: 1.6;
               @include mq(sp) {
-                font-size: 1.8rem;
-                padding-left: 24px;
+                font-size: 1.7rem;
+                padding-left: 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
               }
 
               .num {
@@ -465,7 +468,12 @@ $useCode: false;
                 z-index: -1;
                 transform: translateY(-50%);
                 @include mq(sp) {
-                  font-size: 10rem;
+                  position: relative;
+                  font-size: 4.4rem;
+                  top: auto;
+                  left: auto;
+                  transform: translate(0);
+                  margin-right: 16px;
                 }
               }
             }
