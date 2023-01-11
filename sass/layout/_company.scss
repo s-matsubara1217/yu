@@ -60,7 +60,7 @@ $useCode: false;
     &::before {
       content: '';
       display: inline-block;
-      background-image: url(../../img/company/intro_bg.png);
+      background-image: url(../img/company/intro_bg.png);
       background-repeat: no-repeat;
       background-size: contain;
       width: 999px;
@@ -124,14 +124,13 @@ $useCode: false;
       &__body {
         flex: 1 1 auto;
         @include mq(sp) {
-          margin-top: 32px;
+          margin-top: 40px;
         }
 
         .txt {
           &.-bold {
             font-size: 2.2rem;
             font-weight: bold;
-            line-height: 1.6;
             @media only screen and (max-width: 1200px) {
               font-size: 2rem;
             }
@@ -141,12 +140,12 @@ $useCode: false;
           }
           &.-blue {
             font-size: 2rem;
-            color: #22aabb;
+            color: #22aadd;
             @include family(serif1);
             margin-top: 24px;
             @include mq(sp) {
-              margin-top: 16px;
-              font-size: 1.8rem;
+              margin-top: 20px;
+              font-size: 1.7rem;
             }
 
             br {
@@ -237,6 +236,7 @@ $useCode: false;
           }
 
           .img {
+            @include keepAspect(100%);
             width: 120px;
             height: 120px;
             border-radius: 50%;
@@ -257,7 +257,7 @@ $useCode: false;
           }
           .eng {
             font-family: $opensans;
-            color: #22aabb;
+            color: #22aadd;
             font-size: 3rem;
             position: absolute;
             top: 0;
@@ -279,7 +279,7 @@ $useCode: false;
               font-weight: bold;
               line-height: 1.6;
               @include mq(sp) {
-                font-size: 2rem;
+                font-size: 1.8rem;
               }
             }
             .dot {
@@ -374,7 +374,7 @@ $useCode: false;
             }
             .map {
               font-weight: bold;
-              color: #22aabb;
+              color: #22aadd;
               display: flex;
               justify-content: flex-start;
               align-items: center;
@@ -472,6 +472,7 @@ $useCode: false;
           max-width: 460px;
           @media screen and (max-width: 767px) {
             flex: 0 0 230px !important;
+            max-width: 230px;
           }
         }
       }
@@ -496,12 +497,12 @@ $useCode: false;
         margin: 0 auto;
         box-shadow: 0px 0px 40px -28px #777777;
         padding: 112px 7.2% 56px;
-        border-top: 4px solid #22aabb;
+        border-top: 4px solid #22aadd;
         margin-top: -90px;
         background-color: #fff;
         @include mq(sp) {
           margin-top: -48px;
-          padding: 48px 7.2% 32px;
+          padding: 48px 7.2% 28px;
         }
       }
       &__list {
@@ -524,7 +525,7 @@ $useCode: false;
             flex: 0 0 230px;
             padding-right: 20px;
             font-weight: bold;
-            color: #22aabb;
+            color: #22aadd;
           }
           .desc {
 
