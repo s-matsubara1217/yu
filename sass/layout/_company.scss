@@ -21,7 +21,7 @@ $useCode: false;
       padding-bottom: 40px;
     }
     @include mq(sp) {
-      padding-bottom: 20px;
+      padding-bottom: 12px;
     }
     &__commonHead01 {
       text-align: center;
@@ -461,6 +461,11 @@ $useCode: false;
     }
 
     .separateImgs {
+      height: 306px;
+      @include mq(sp) {
+        height: 153px;
+      }
+
       &__list {
         align-items: stretch !important;
 
