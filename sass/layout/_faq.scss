@@ -21,10 +21,17 @@ $useCode: false;
     @media only screen and (max-width: 1200px) {
       padding-bottom: 120px;
     }
+    @include mq(sp) {
+      padding-top: 52px;
+      padding-bottom: 64px;
+    }
 
     &__list {
       &__item {
         margin-top: 40px;
+        @include mq(sp) {
+          margin-top: 32px;
+        }
         &:first-child {
           margin-top: 0;
         }
@@ -39,6 +46,12 @@ $useCode: false;
           padding-bottom: 16px;
           padding-right: 32px;
           border-bottom: 1px solid #e7e7e7;
+          @include mq(sp) {
+            font-size: 1.5rem;
+            padding-bottom: 10px;
+            padding-left: 8px;
+            padding-right: 8px;
+          }
 
           // Q
           &::before {
@@ -60,12 +73,26 @@ $useCode: false;
             margin-right: 20px;
             margin-top: -2px;
             flex-shrink: 0;
+            @include mq(sp) {
+              font-size: 1.5rem;
+              width: 26px;
+              height: 26px;
+              line-height: 26;
+              margin-right: 12px;
+              margin-top: -1px;
+            }
           }
         }
         .txt-answer {
           padding-top: 16px;
           padding-left: 48px;
           padding-right: 32px;
+          @include mq(sp) {
+            padding-top: 10px;
+            // padding-left: 36px;
+            padding-left: 8px;
+            padding-right: 8px;
+          }
         }
       }
     }
@@ -78,6 +105,10 @@ $useCode: false;
     align-items: flex-end;
     margin: 0 14%;
     height: 85px;
+    @include mq(sp) {
+      margin: 0 5%;
+      height: 64px;
+    }
 
     .tab {
       flex: 1 1 auto;
@@ -95,6 +126,11 @@ $useCode: false;
           background-color: darken(#d5eff9,5%);
         }
       }
+      @include mq(sp) {
+        margin: 0 4px;
+        height: 56px;
+        width: 30%;
+      }
 
       &.is-active {
         height: 85px;
@@ -102,11 +138,24 @@ $useCode: false;
         transition: all 0.3s ease;
         border-top: 3px solid $secondary-color;
         pointer-events: none;
+        @include mq(sp) {
+          height: 64px;
+          width: 40%;
+        }
+
+        .ja {
+          @include mq(sp) {
+            font-size: 1.5rem;
+          }
+        }
       }
 
       .ja {
         font-size: 1.8rem;
         font-weight: bold;
+        @include mq(sp) {
+          font-size: 1.2rem;
+        }
       }
     }
   }
@@ -119,6 +168,10 @@ $useCode: false;
       border-radius: 30px;
       position: relative;
       overflow: hidden;
+      @include mq(sp) {
+        border-radius: 20px;
+        padding: 36px 8% 44px;
+      }
 
       // 背景ロゴ 水色
       &::before {
@@ -135,6 +188,14 @@ $useCode: false;
         transform: translate(-50%,-50%);
         z-index: -1;
         pointer-events: none;
+        @include mq(sp) {
+          top: auto;
+          left: auto;
+          bottom: 0;
+          right: 0;
+          transform: scale(0.4) translate(30%,30%);
+          transform-origin: bottom right;
+        }
       }
 
       &.is-show {
