@@ -64,7 +64,7 @@ $useCode: false;
           padding-bottom: 12px;
           position: relative;
           @include mq(sp) {
-            font-size: 2rem;
+            font-size: 1.8rem;
           }
 
           // 縦線 secondary
@@ -89,7 +89,11 @@ $useCode: false;
             margin-right: 12px;
           }
           .txt {
-
+            font-weight: 400;
+            font-size: 2.6rem;
+            @include mq(sp) {
+              font-size: 2rem;
+            }
           }
         }
         .desc {

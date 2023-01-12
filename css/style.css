@@ -3742,7 +3742,7 @@ h2, h3, h4 {
 }
 @media screen and (max-width: 834px) {
   .lower-privacy .privacy__list__item .term {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 .lower-privacy .privacy__list__item .term::before {
@@ -3765,6 +3765,15 @@ h2, h3, h4 {
   font-weight: bold;
   color: #ff00a3;
   margin-right: 12px;
+}
+.lower-privacy .privacy__list__item .term .txt {
+  font-weight: 400;
+  font-size: 2.6rem;
+}
+@media screen and (max-width: 834px) {
+  .lower-privacy .privacy__list__item .term .txt {
+    font-size: 2rem;
+  }
 }
 .lower-privacy .privacy__list__item .desc {
   padding-top: 20px;
