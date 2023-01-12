@@ -53,7 +53,7 @@ $useCode: false;
     position: relative;
     padding-bottom: 100px;
     @include mq(sp) {
-      padding-bottom: 56px;
+      padding-bottom: 88px;
     }
 
     // 背景画像
@@ -72,7 +72,7 @@ $useCode: false;
       z-index: -1;
       pointer-events: none;
       @include mq(sp) {
-        transform: scale(0.5);
+        transform: scale(0.35);
         transform-origin: bottom right;
       }
     }
@@ -89,28 +89,27 @@ $useCode: false;
       }
       &__head {
         flex: 0 0 31%;
+        @include mq(sp) {
+          position: relative;
+          padding-bottom: 16px;
+        }
+        // 水色背景
+        &::before {
+          @include mq(sp) {
+            content: '';
+            display: inline-block;
+            width: 200vw;
+            height: calc(100% - 80px);
+            background-color: $bg-color;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+          }
+        }
 
         .ttl {
-          @include mq(sp) {
-            position: relative;
-            padding-bottom: 16px;
-          }
-
-          &::before {
-            @include mq(sp) {
-              content: '';
-              display: inline-block;
-              width: 200vw;
-              height: calc(100% - 80px);
-              background-color: $bg-color;
-              position: absolute;
-              bottom: 0;
-              left: 50%;
-              transform: translateX(-50%);
-              z-index: -1;
-            }
-          }
-
           img {
             margin-right: auto;
             margin-left: 30%;
@@ -176,6 +175,12 @@ $useCode: false;
 
           .img {
             margin-left: 20px;
+
+            img {
+              @include mq(sp) {
+                height: 26px;
+              }
+            }
           }
         }
       }
